@@ -1,14 +1,19 @@
-import React, { createContext, useState, useEffect } from "react";
-import {
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    onAuthStateChanged,
-    signOut,
-    signInWithPopup,
-    GoogleAuthProvider,
-    updateProfile,
-} from "firebase/auth";
+// import React, { createContext, useState, useEffect } from "react";
+// import {
+//     createUserWithEmailAndPassword,
+//     signInWithEmailAndPassword,
+//     onAuthStateChanged,
+//     signOut,
+//     signInWithPopup,
+//     GoogleAuthProvider,
+//     updateProfile,
+// } from "firebase/auth";
+
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
 import { auth } from "../../../firebase.init";
+
+
 
 export const AuthContext = createContext();
 
