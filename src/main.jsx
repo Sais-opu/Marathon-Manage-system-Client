@@ -14,6 +14,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Marathon from './components/Marathon/Marathon.jsx'
+import AuthProvider from './components/Provider/authProvider.jsx'
 
 
 const router = createBrowserRouter([
@@ -43,12 +44,15 @@ const router = createBrowserRouter([
         element: <Marathon></Marathon>
       },
     ],
-    },
-  ]);
+  },
+]);
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+
   </StrictMode>,
 )
