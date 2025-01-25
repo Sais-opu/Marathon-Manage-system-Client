@@ -1,0 +1,6 @@
+.active-link {
+    background-color: #6b46c1; 
+    color: white;
+    padding: 0.5rem 1rem; 
+    border-radius: 0.375rem; 
+}
