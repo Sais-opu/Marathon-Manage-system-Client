@@ -15,6 +15,7 @@ import {
 } from "react-router-dom";
 import Marathon from './components/Marathon/Marathon.jsx'
 import AuthProvider from './components/Provider/authProvider.jsx'
+import PrivateRoute from './components/private/PrivateRoute.jsx'
 
 
 const router = createBrowserRouter([
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dasboard",
-        element: <Dashboard></Dashboard>,
+        element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute> ,
       },
       {
         path: "/marathon",
