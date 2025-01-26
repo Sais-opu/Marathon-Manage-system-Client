@@ -13,7 +13,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Marathon from './components/Marathon/Marathon.jsx'
+import Marathon from './components/MarathonsPage/Marathon.jsx'
 import AuthProvider from './components/Provider/authProvider.jsx'
 import PrivateRoute from './components/private/PrivateRoute.jsx'
 
