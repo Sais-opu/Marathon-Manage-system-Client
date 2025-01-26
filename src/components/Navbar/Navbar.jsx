@@ -8,7 +8,7 @@ import { AuthContext } from "../Provider/authProvider";
 
 
 const Navbar = () => {
-    const{user,signOutUser} =useContext(AuthContext);
+    const { user, signOutUser } = useContext(AuthContext);
     const handleLogout = async () => {
         try {
             await signOutUser();
@@ -29,14 +29,17 @@ const Navbar = () => {
                     Home
                 </NavLink>
             </li>
-            <li>
-                <NavLink to="/dasboard"
-                    className={({ isActive }) =>
-                        isActive ? "bg-purple-600 text-white px-4 py-2 rounded" : ""
-                    } >
-                    Dashboard
-                </NavLink>
-            </li>
+            {user && user.displayName && (
+                <li>
+                    <NavLink to="/dasboard"
+                        className={({ isActive }) =>
+                            isActive ? "bg-purple-600 text-white px-4 py-2 rounded" : ""
+                        } >
+                        Dashboard
+                    </NavLink>
+                </li>
+            )}
+
             <li>
                 <NavLink to="/marathon"
                     className={({ isActive }) =>
@@ -53,7 +56,7 @@ const Navbar = () => {
 
         <div>
             {user && user.displayName && (
-                <div className="bg-gray-100 text-center py-2">
+                <div className="bg-purple-400 text-center py-2">
                     <span className="text-sm font-medium">
                         Welcome, {user.displayName}!
                     </span>
@@ -112,7 +115,7 @@ const Navbar = () => {
                     {user && user.displayName ? (
                         <div className="flex items-center gap-4">
                             <button
-                                className="btn btn-success"
+                                className="btn bg-purple-600 text-white"
                                 onClick={handleLogout}
                             >
                                 Log Out
@@ -120,10 +123,10 @@ const Navbar = () => {
                         </div>
                     ) : (
                         <div className="flex gap-4">
-                            <NavLink to="/register" className="btn btn-outline btn-success">
+                            <NavLink to="/register" className="btn bg-purple-600 text-white">
                                 Sign Up
                             </NavLink>
-                            <NavLink to="/login" className="btn btn-outline btn-success">
+                            <NavLink to="/login" className="btn bg-purple-600 text-white">
                                 Log In
                             </NavLink>
                         </div>

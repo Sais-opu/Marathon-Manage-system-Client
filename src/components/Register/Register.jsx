@@ -191,7 +191,7 @@ const Register = () => {
                         <p className="text-red-500 text-xs italic mt-2">{passwordError}</p>
                     )}
                 </div>
-                <button type="submit" className="btn btn-success">
+                <button type="submit" className="btn bg-purple-600 text-white">
                     Register Now
                 </button>
                 <div className="mt-3">
