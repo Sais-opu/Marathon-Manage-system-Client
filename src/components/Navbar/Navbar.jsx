@@ -91,9 +91,12 @@ const Navbar = () => {
 
                     <NavLink
                         to="/"
-                        className="btn btn-ghost normal-case md:text-xl font-bold"
+                        className="btn btn-ghost normal-case md:text-xl font-bold flex"
                     >
-                        Marathon Manage System
+                        
+                            <img className="w-10" src="/src/assets/logo.jpg" alt="logo" />
+                            <p>Marathon Manage</p>
+                        
                     </NavLink>
                 </div>
                 <div className="navbar-center hidden lg:flex">

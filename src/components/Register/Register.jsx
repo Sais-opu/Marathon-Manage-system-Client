@@ -8,7 +8,7 @@ import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/authProvider";
-import { Bounce, toast, ToastContainer } from "react-toastify";
+import { Bounce, toast} from "react-toastify";
 
 
 
@@ -23,6 +23,12 @@ const Register = () => {
         try {
             await signInWithGoogle();
             navigate("/");
+            toast.success("User created successfully by Google sign in!", {
+                position: "top-center",
+                autoClose: 5000,
+                theme: "light",
+                transition: Bounce,
+            });
         } catch (error) {
             console.error("Google login failed:", error.message);
         }
@@ -208,7 +214,7 @@ const Register = () => {
                 </div>
             </form>
 
-            <ToastContainer
+            {/* <ToastContainer
                 position="top-center"
                 autoClose={5000}
                 hideProgressBar={false}
@@ -220,7 +226,7 @@ const Register = () => {
                 pauseOnHover
                 theme="light"
                 transition="bounce"
-            />
+            /> */}
         </div>
     );
 };

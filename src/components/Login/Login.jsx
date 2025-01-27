@@ -7,7 +7,7 @@
 import {  useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/authProvider";
-import { Bounce, toast, ToastContainer } from "react-toastify";
+import { Bounce, toast} from "react-toastify";
 useContext
 
 
@@ -158,7 +158,7 @@ const Login = () => {
                 </form>
             </div>
 
-            <ToastContainer
+            {/* <ToastContainer
                 position="top-center"
                 autoClose={5000}
                 hideProgressBar={false}
@@ -170,7 +170,7 @@ const Login = () => {
                 pauseOnHover
                 theme="light"
                 transition="bounce"
-            />
+            /> */}
         </div>
     );
 };
