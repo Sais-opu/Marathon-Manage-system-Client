@@ -32,7 +32,7 @@ const Slider = () => {
                 <img src={slider3Image} className="w-full h-[500px] object-contain" />
                 <div className="absolute text-center inset-x-0 bottom-8 bg-opacity-70 bg-black text-white py-4 px-6">
                     <h2 className="text-xl font-bold">Join a Community of Like-Minded Individuals</h2>
-                    <p>Your donations make a real difference in the lives of many.</p>
+                    <p>Marathons connect you with a diverse community of runners and supporters. The shared experience creates lasting bonds and a sense of belonging.</p>
                 </div>
                 <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
                     <a href="#slide2" className="btn btn-circle">❮</a>
