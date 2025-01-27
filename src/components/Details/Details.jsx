@@ -17,8 +17,6 @@ const Details = () => {
     const startDate = normalizeDate(parseDate(StartRegistrationDate));
     const endDate = normalizeDate(parseDate(EndRegistrationDate));
     const currentDate = normalizeDate(new Date());
-
-    console.log(startDate, endDate, currentDate)
     const isRegistrationOpen = currentDate >= startDate && currentDate <= endDate;
 
     return (

@@ -16,16 +16,21 @@ const Registration = () => {
             .catch((err) => console.error("Failed to fetch marathons:", err));
     }, []);
     const submitApply = e => {
+        
         const form = e.target;
+        const email = form.email.value
+        const marathondate = form.marathondate.value
+        const Title = form.Title.value
         const firstname = form.firstname.value
         const lastname = form.lastname.value
         const contactInfo = form.contactInfo.value
         const addinfo = form.addinfo.value
+        
+
         // apply info
         const listApply = {
             apply_id: id,
-            apply_email: user.email,
-            firstname, lastname, contactInfo, addinfo
+            email,Title,marathondate,firstname, lastname, contactInfo, addinfo
         }
         fetch('http://localhost:5000/apply-applications', {
             method: 'POST',
@@ -42,49 +47,111 @@ const Registration = () => {
 
     return (
         <div>
-            <h1>{apply.Title}</h1>
-            <h1>{user.email}</h1>
-            <div className="card bg-base-100 w-full shadow-2xl">
-                <h1 className="text-5xl font-bold text-center">Registration Form,</h1>
-                <form onSubmit={submitApply} className="card-body">
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Email</span>
+            <div className="md:px-32">
+                <h2 className="font-extrabold text-4xl my-6">Registration</h2>
+                <form onSubmit={submitApply} className="space-y-6">
+                    <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                            Email
                         </label>
-                        <input value={user.email} readOnly type="email" name="email" placeholder="email" className="input input-bordered" required />
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            value={user.email} readOnly
+                            className="mt-1 p-2 w-full border rounded-md"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="Title" className="block text-sm font-medium text-gray-700">
+                            Title
+                        </label>
+                        <input
+                            type="text"
+                            id="Title"
+                            name="Title"
+                            value={apply.Title} readOnly
+                            className="mt-1 p-2 w-full border rounded-md"
+                            required
+                        />
                     </div>
 
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">First Name</span>
+                    <div>
+                        <label htmlFor="marathondate" className="block text-sm font-medium text-gray-700">
+                            Marathon Date-month/date/year
                         </label>
-                        <input type="text" name="firstname" placeholder="First-name" className="input input-bordered" required />
+                        <input
+                            type="text"
+                            id="marathondate"
+                            name="marathondate"
+                            value={apply.MarathonStartDate} readOnly
+                            className="mt-1 p-2 w-full border rounded-md"
+                            required
+                        />
                     </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Last Name</span>
+                    <div>
+                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+                            First name
                         </label>
-                        <input type="text" name="lastname" placeholder="Last-name" className="input input-bordered" required />
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="firstname"
+                            placeholder="First Name"
+                            className="mt-1 p-2 w-full border rounded-md"
+                            required
+                        />
                     </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Contact Info</span>
+                    <div>
+                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
+                            Last name
                         </label>
-                        <input type="text" name="contactInfo" placeholder="" className="input input-bordered" required />
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="lastname"
+                            placeholder="Last Name"
+                            className="mt-1 p-2 w-full border rounded-md"
+                            required
+                        />
                     </div>
-                    <div className="form-">
-                        <label className="label">
-                            <span className="label-text">Additional Info</span>
+                    <div>
+                        <label htmlFor="contactInfo" className="block text-sm font-medium text-gray-700">
+                            Contact Info
                         </label>
-                        <input type="text" name="addinfo" placeholder="" className="input input-bordered " required />
+                        <input
+                            type="text"
+                            id="contactInfo"
+                            name="contactInfo"
+                            placeholder="Contact Info"
+                            className="mt-1 p-2 w-full border rounded-md"
+                            required
+                        />
                     </div>
-                    <div className="form-control mt-6">
-                        <button className="btn btn-primary">Login</button>
+                    <div>
+                        <label htmlFor="additinInfo" className="block text-sm font-medium text-gray-700">
+                            Additional Info
+                        </label>
+                        <input
+                            type="text"
+                            id="additinInfo"
+                            name="addinfo"
+                            placeholder="Additional Info"
+                            className="mt-1 p-2 w-full border rounded-md"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <button className="w-full bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition duration-300">
+                            Login
+                        </button>
                     </div>
                 </form>
             </div>
-        </div >
-    );
-};
+        </div>
+    )
+}
+
 
 export default Registration;
