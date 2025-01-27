@@ -1,7 +1,9 @@
 import Marathons from './Marathons'
 import Slider from './Slider';
 import Upcoming from './Upcoming';
-
+import How1 from '../../../src/assets/how1.jpg'
+import How2 from '../../../src/assets/how2.jpg'
+import How3 from '../../../src/assets/how3.jpg'
 
 const Home = () => {
     return (
@@ -31,7 +33,7 @@ const Home = () => {
                         <div>
                             <h1 className="text-3xl font-bold">Support a Worthy Cause</h1>
                             <p className="py-6">
-                                Winter in Bangladesh is challenging for underprivileged communities lacking warm clothing. Donating winter essentials like blankets, sweaters, and jackets can help vulnerable families stay safe during the cold months. Join local charities or organize a drive to make a meaningful impact this season.
+                            Many marathons are organized to raise funds for charities. By participating, you contribute to impactful causes and help make a difference.
                             </p>
                             <button className="btn bg-purple-600 text-white ">See more</button>
                         </div>
@@ -45,9 +47,9 @@ const Home = () => {
                         src={How2}
                         className="max-w-md  rounded-lg shadow-2xl" />
                     <div>
-                        <h1 className="text-3xl font-bold">Find a Collection Point</h1>
+                        <h1 className="text-3xl font-bold">Boost Self-Confidence</h1>
                         <p className="py-6">
-                            Drop off your donations at our collection points across Bangladesh.
+                        Completing a marathon is a significant achievement. It instills a sense of pride and confidence, proving you can conquer challenges in life.
                         </p>
                         <button className="btn bg-purple-600 text-white ">See more</button>
                     </div>
@@ -61,9 +63,9 @@ const Home = () => {
                             src={How3}
                             className="max-w-md rounded-lg shadow-2xl" />
                         <div>
-                            <h1 className="text-3xl font-bold">We Distribute to Supported Divisions</h1>
+                            <h1 className="text-3xl font-bold">Discover New Places and Experiences</h1>
                             <p className="py-6">
-                                Donations are distributed to underserved communities in Rangpur, Rajshahi and Chuadanga.
+                            Marathons often take you to scenic routes and iconic landmarks, offering a unique way to explore and appreciate new destinations.
                             </p>
                             <button className="btn bg-purple-600 text-white ">See more</button>
                         </div>
