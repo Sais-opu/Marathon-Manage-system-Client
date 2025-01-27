@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const Marathon = () => {
     const [marathons, setMarathons] = useState([]);
 
     useEffect(() => {
-        // Fetch data from the API
+        
         fetch('http://localhost:5000/marathon')
             .then((res) => res.json())
             .then((data) => setMarathons(data))
@@ -47,7 +49,7 @@ const Marathon = () => {
                                 <strong>Running Distance:</strong> {marathon.RunningDistance}
                             </p>
                             <div className="card-actions">
-                                <Link to={`/marathon/${_id}`}>
+                                <Link to={`/marathon/${marathon._id}`}>
                                     <button className="btn bg-purple-600 text-white">See Details</button>
                                 </Link>
                             </div>
