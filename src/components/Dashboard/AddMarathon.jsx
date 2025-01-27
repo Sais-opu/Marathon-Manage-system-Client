@@ -1,37 +1,38 @@
+import { useContext } from "react";
+import { AuthContext } from "../Provider/authProvider";
+import Swal from 'sweetalert2';
 
 
 const AddMarathon = () => {
+    const { user } = useContext(AuthContext);
 
     const handleAddMarahton = e => {
-        e.preventDefault()
+        e.preventDefault();
         const formData = new FormData(e.target);
-
-        const initialData = Object.fromEntries(formData.entries())
-        console.log(initialData)
+        const initialData = Object.fromEntries(formData.entries());
+        console.log(initialData);
 
         fetch('http://localhost:5000/marathon', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(initialData)
+            body: JSON.stringify(initialData),
         })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-                    Swal.fire({
-                        position:"top-end",
-                        icon: 'success',
-                        title: 'Marathon Added!',
-                        text: 'Your Marathon has been added successfully.',
-                        showComfirmButton:false,
-                        timer:1500
-                    });
-
-                }
-            })
-    }
-
+        .then(res => res.json())
+        .then(data => {
+            if (data.insertedId) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: 'success',
+                    title: 'Marathon Added!',
+                    text: 'Your Marathon has been added successfully.',
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+            }
+        })
+    };
 
     return (
         <div>
@@ -56,11 +57,8 @@ const AddMarathon = () => {
                         </label>
                         <input
                             type="date"
-                            id="StartRegistrationDate
-"
-                            name="StartRegistrationDate
-"
-
+                            id="StartRegistrationDate"
+                            name="StartRegistrationDate"
                             className="mt-1 p-2 w-full border rounded-md"
                             required
                         />
@@ -79,7 +77,7 @@ const AddMarathon = () => {
                     </div>
                     <div>
                         <label htmlFor="MarathonStartDate" className="block text-sm font-medium text-gray-700">
-                            Marathon start date
+                            Marathon Start Date
                         </label>
                         <input
                             type="date"
@@ -97,7 +95,6 @@ const AddMarathon = () => {
                             type="text"
                             id="Location"
                             name="Location"
-
                             className="mt-1 p-2 w-full border rounded-md"
                             required
                         />
@@ -109,7 +106,6 @@ const AddMarathon = () => {
                         <select
                             id="RunningDistance"
                             name="RunningDistance"
-
                             className="mt-1 p-2 w-full border rounded-md"
                             required
                         >
@@ -130,6 +126,20 @@ const AddMarathon = () => {
                         />
                     </div>
                     <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                            Email
+                        </label>
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            value={user?.email || ''}
+                            readOnly
+                            className="mt-1 p-2 w-full border rounded-md"
+                            required
+                        />
+                    </div>
+                    <div>
                         <label htmlFor="MarathonImage" className="block text-sm font-medium text-gray-700">
                             Image URL
                         </label>
@@ -141,32 +151,6 @@ const AddMarathon = () => {
                             required
                         />
                     </div>
-                    {/* <div>
-                        <label htmlFor="userEmail" className="block text-sm font-medium text-gray-700">
-                            User Email
-                        </label>
-                        <input
-                            type="text"
-                            id="userEmail"
-                            name="userEmail"
-
-                            readOnly
-                            className="mt-1 p-2 w-full border rounded-md bg-gray-200"
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="userName" className="block text-sm font-medium text-gray-700">
-                            User Name
-                        </label>
-                        <input
-                            type="text"
-                            id="userName"
-                            name="userName"
-
-                            readOnly
-                            className="mt-1 p-2 w-full border rounded-md bg-gray-200"
-                        />
-                    </div> */}
                     <div>
                         <button className="w-full bg-purple-600 text-white py-2 px-6 rounded-md hover:bg-purple-900 transition duration-300">
                             Submit

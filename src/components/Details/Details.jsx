@@ -1,25 +1,32 @@
-
 import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-
-
 const Details = () => {
-    const { _id,MarathonImage, Title, Description, Location, StartRegistrationDate, EndRegistrationDate,MarathonStartDate,RunningDistance } = useLoaderData();
-    
-    const parseDate = (dateString) => {
-        const [month, day, year] = dateString.split('/');
-        return new Date(`${year}-${month}-${day}`);
+    const { _id, MarathonImage, Title, Description, Location, StartRegistrationDate, EndRegistrationDate, MarathonStartDate, RunningDistance } = useLoaderData();
+
+    // Normalize the current date for comparison
+    const normalizeDate = (dateString) => {
+        // Check if the dateString exists and is valid
+        if (!dateString) {
+            return null; // Return null if the date is missing or invalid
+        }
+        
+        const parts = dateString.split('/');
+        if (parts.length !== 3) {
+            return null; // Return null if the format is not as expected
+        }
+
+        const [month, day, year] = parts;
+        const fullYear = year.length === 2 ? `20${year}` : year; // Ensure full year
+        return new Date(`${fullYear}-${month}-${day}`);
     };
-    const normalizeDate = (date) => {
-        const newDate = new Date(date);
-        newDate.setHours(0, 0, 0, 0);
-        return newDate;
-    };
-    const startDate = normalizeDate(parseDate(StartRegistrationDate));
-    const endDate = normalizeDate(parseDate(EndRegistrationDate));
-    const currentDate = normalizeDate(new Date());
-    const isRegistrationOpen = currentDate >= startDate && currentDate <= endDate;
+
+    const startDate = normalizeDate(StartRegistrationDate);
+    const endDate = normalizeDate(EndRegistrationDate);
+    const marathonStart = normalizeDate(MarathonStartDate);
+    const currentDate = new Date();
+
+    const isRegistrationOpen = startDate && endDate && currentDate >= startDate && currentDate <= endDate;
 
     return (
         <div>
@@ -33,11 +40,12 @@ const Details = () => {
                     <h2 className="card-title">{Title}</h2>
                     <p>{Description}</p>
                     <p><strong>Location:</strong> {Location}</p>
-                    <p><strong>Registration-Start:</strong> {StartRegistrationDate}</p>
-                    <p><strong>Registration-End:</strong> {EndRegistrationDate}</p>
-                    <p><strong>Marathon-start:</strong> {MarathonStartDate}</p>
+                    {/* Display dates exactly as they are */}
+                    <p><strong>Registration-Start:</strong> {StartRegistrationDate || "N/A"}</p>
+                    <p><strong>Registration-End:</strong> {EndRegistrationDate || "N/A"}</p>
+                    <p><strong>Marathon-start:</strong> {MarathonStartDate || "N/A"}</p>
                     <p><strong>RunningDistance:</strong> {RunningDistance}</p>
-                    
+
                     {isRegistrationOpen ? (
                         <Link to={`/registration/${_id}`}>
                             <button className="btn bg-purple-600 text-white">
@@ -56,6 +64,11 @@ const Details = () => {
 };
 
 export default Details;
+
+
+
+
+
 
 
 
