@@ -1,8 +1,9 @@
+import React from 'react';
 
 const ApplyList = () => {
     return (
         <div>
-            <h1>apply list</h1>
+            
         </div>
     );
 };

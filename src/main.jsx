@@ -19,9 +19,9 @@ import Marathon from './components/MarathonsPage/Marathon.jsx'
 import AuthProvider from './components/Provider/authProvider.jsx'
 import PrivateRoute from './components/private/PrivateRoute.jsx'
 import Details from './components/Details/Details.jsx'
-import Addmarathon from './components/Addmarathon/Addmarathon.jsx'
-import MarathonList from './components/MarathonList/MarathonList.jsx'
-import ApplyList from './components/ApplyList/ApplyList.jsx'
+import AddMarathon from './components/Dashboard/AddMarathon.jsx'
+import ApplyList from './components/Dashboard/ApplyList.jsx'
+import MarathonList from './components/Dashboard/MarathonList.jsx'
 import UpcomingDetails from './components/Details/UpcomingDetails.jsx'
 
 
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/addmarathon",
-        element: <PrivateRoute> <Addmarathon></Addmarathon>  </PrivateRoute>,
+        element: <PrivateRoute> <AddMarathon></AddMarathon>  </PrivateRoute>,
       },
       {
         path: "/dashboard/marathonlist",
