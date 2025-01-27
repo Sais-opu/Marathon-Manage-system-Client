@@ -31,7 +31,7 @@ const Slider = () => {
             <div id="slide3" className="carousel-item relative w-full">
                 <img src={slider3Image} className="w-full h-[500px] object-contain" />
                 <div className="absolute text-center inset-x-0 bottom-8 bg-opacity-70 bg-black text-white py-4 px-6">
-                    <h2 className="text-xl font-bold">Be the Change You Wish to See</h2>
+                    <h2 className="text-xl font-bold">Join a Community of Like-Minded Individuals</h2>
                     <p>Your donations make a real difference in the lives of many.</p>
                 </div>
                 <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
