@@ -18,6 +18,11 @@ import {
 import Marathon from './components/MarathonsPage/Marathon.jsx'
 import AuthProvider from './components/Provider/authProvider.jsx'
 import PrivateRoute from './components/private/PrivateRoute.jsx'
+import Details from './components/Details/Details.jsx'
+import Addmarathon from './components/Addmarathon/Addmarathon.jsx'
+import MarathonList from './components/MarathonList/MarathonList.jsx'
+import ApplyList from './components/ApplyList/ApplyList.jsx'
+import UpcomingDetails from './components/Details/UpcomingDetails.jsx'
 
 
 const router = createBrowserRouter([
@@ -41,6 +46,26 @@ const router = createBrowserRouter([
       {
         path: "/dasboard",
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+      },
+      {
+        path: "/marathon/:id",
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
+      },
+      {
+        path: "/upcoming/:id",
+        element: <PrivateRoute> <UpcomingDetails></UpcomingDetails> </PrivateRoute>,
+      },
+      {
+        path: "/dashboard/addmarathon",
+        element: <PrivateRoute> <Addmarathon></Addmarathon>  </PrivateRoute>,
+      },
+      {
+        path: "/dashboard/marathonlist",
+        element: <PrivateRoute> <MarathonList></MarathonList>  </PrivateRoute>,
+      },
+      {
+        path: "/dashboard/applylist",
+        element: <PrivateRoute> <ApplyList></ApplyList> </PrivateRoute>,
       },
       {
         path: "/marathon",

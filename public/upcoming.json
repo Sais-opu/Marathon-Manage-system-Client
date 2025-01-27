@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "title": "Winter Wonderland Run",
+        "start_registration_date": "02/15/2025",
+        "end_registration_date": "03/20/2025",
+        "marathon_start_date": "03/25/2025",
+        "Location": "Snowy Peaks Park, CO",
+        "description": "Run through a beautiful snowy landscape in this fun winter-themed 5K race.",
+        "marathon_image": "https://i.ibb.co.com/ZM29Rx1/m-4.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Desert Dash",
+        "start_registration_date": "03/01/2025",
+        "end_registration_date": "04/05/2025",
+        "marathon_start_date": "04/10/2025",
+        "Location": "Sahara Trails, AZ",
+        "description": "A challenging marathon through the scenic desert trails under clear skies.",
+        "marathon_image": "https://i.ibb.co.com/4pWfJWB/m-2.jpg"
+    },
+    {
+        "id": "3",
+        "title": "Riverbank Sprint",
+        "start_registration_date": "03/10/2025",
+        "end_registration_date": "04/15/2025",
+        "marathon_start_date": "04/20/2025",
+        "Location": "Green River Park, WA",
+        "description": "Enjoy the fresh river breeze in this fast-paced 10K sprint along the water.",
+        "marathon_image": "https://i.ibb.co.com/mNYFvY0/m-6.jpg"
+    },
+    {
+        "id": "4",
+        "title": "Sunset Coast Run",
+        "start_registration_date": "04/01/2025",
+        "end_registration_date": "05/10/2025",
+        "marathon_start_date": "05/15/2025",
+        "Location": "Golden Bay Beach, FL",
+        "description": "Run along the coast as the sun sets in this stunning evening marathon.",
+        "marathon_image": "https://i.ibb.co.com/L1h3fmr/m-7.jpg"
+    },
+    {
+        "id": "5",
+        "title": "Trailblazers Ultra",
+        "start_registration_date": "04/15/2025",
+        "end_registration_date": "05/20/2025",
+        "marathon_start_date": "06/01/2025",
+        "Location": "Eagle Rock National Park, UT",
+        "description": "Push your limits with this ultra-marathon through rugged mountain trails.",
+        "marathon_image": "https://i.ibb.co.com/jv7ZgR5/m-9.jpg"
+    },
+    {
+        "id": "6",
+        "title": "Capital City Sprint",
+        "start_registration_date": "05/01/2025",
+        "end_registration_date": "06/05/2025",
+        "marathon_start_date": "06/10/2025",
+        "Location": "Downtown Capitol Square, DC",
+        "description": "Experience the nation's capital in this exciting sprint through historic landmarks.",
+        "marathon_image": "https://i.ibb.co.com/T857Fk6/m-12.jpg"
+    }
+]
