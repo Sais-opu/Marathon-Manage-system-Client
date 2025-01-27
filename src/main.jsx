@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute> <ApplyList></ApplyList> </PrivateRoute>,
       },
       {
-        path: "/registration",
+        path: "/registration/:id",
         element: <PrivateRoute> <Registration></Registration></PrivateRoute>,
       },
       {

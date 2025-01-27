@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const Details = () => {
-    const { MarathonImage, Title, Description, Location, StartRegistrationDate, EndRegistrationDate } = useLoaderData();
+    const { _id,MarathonImage, Title, Description, Location, StartRegistrationDate, EndRegistrationDate,MarathonStartDate,RunningDistance } = useLoaderData();
     
     const parseDate = (dateString) => {
         const [month, day, year] = dateString.split('/');
@@ -35,9 +35,11 @@ const Details = () => {
                     <p><strong>Location:</strong> {Location}</p>
                     <p><strong>Registration-Start:</strong> {StartRegistrationDate}</p>
                     <p><strong>Registration-End:</strong> {EndRegistrationDate}</p>
+                    <p><strong>Marathon-start:</strong> {MarathonStartDate}</p>
+                    <p><strong>RunningDistance:</strong> {RunningDistance}</p>
 
                     {isRegistrationOpen ? (
-                        <Link to="/registration">
+                        <Link to={`/registration/${_id}`}>
                             <button className="btn bg-purple-600 text-white">
                                 Register
                             </button>
