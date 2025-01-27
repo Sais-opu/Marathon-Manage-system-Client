@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/authProvider";
 
-
+import logo from '../../assets/logo.jpg'
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
@@ -94,7 +94,7 @@ const Navbar = () => {
                         className="btn btn-ghost normal-case md:text-xl font-bold flex"
                     >
                         
-                            <img className="w-10" src="/src/assets/logo.jpg" alt="logo" />
+                            <img className="w-10" src={logo} alt="logo" />
                             <p>Marathon Manage</p>
                         
                     </NavLink>
