@@ -46,6 +46,11 @@ const Marathon = () => {
                             <p>
                                 <strong>Running Distance:</strong> {marathon.RunningDistance}
                             </p>
+                            <div className="card-actions">
+                                <Link to={`/marathon/${_id}`}>
+                                    <button className="btn bg-purple-600 text-white">See Details</button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 ))}
