@@ -29,6 +29,14 @@ const Navbar = () => {
                     Home
                 </NavLink>
             </li>
+            <li>
+                <NavLink to="/marathon"
+                    className={({ isActive }) =>
+                        isActive ? "bg-purple-600 text-white px-4 py-2 rounded" : ""
+                    } >
+                    Marathons
+                </NavLink>
+            </li>
             {user && user.displayName && (
                 <li>
                     <NavLink to="/dasboard"
@@ -40,14 +48,7 @@ const Navbar = () => {
                 </li>
             )}
 
-            <li>
-                <NavLink to="/marathon"
-                    className={({ isActive }) =>
-                        isActive ? "bg-purple-600 text-white px-4 py-2 rounded" : ""
-                    } >
-                    Marathons
-                </NavLink>
-            </li>
+            
 
         </>
     );

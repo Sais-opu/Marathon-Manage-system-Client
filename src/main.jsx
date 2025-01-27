@@ -50,7 +50,9 @@ const router = createBrowserRouter([
       {
         path: "/marathon/:id",
         element: <PrivateRoute><Details></Details></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/marathon/${params.id}`), 
       },
+      
       {
         path: "/upcoming/:id",
         element: <PrivateRoute> <UpcomingDetails></UpcomingDetails> </PrivateRoute>,
