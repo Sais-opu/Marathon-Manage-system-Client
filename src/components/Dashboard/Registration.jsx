@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import useAuth from "../Provider/useAuth";
+
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/authProvider";
 
@@ -19,7 +19,7 @@ const Registration = () => {
         
         const form = e.target;
         const email = form.email.value
-        const marathondate = form.marathondate.value
+        const MarathonStartDate = form.MarathonStartDate.value
         const Title = form.Title.value
         const firstname = form.firstname.value
         const lastname = form.lastname.value
@@ -30,7 +30,7 @@ const Registration = () => {
         // apply info
         const listApply = {
             apply_id: id,
-            email,Title,marathondate,firstname, lastname, contactInfo, addinfo
+            email,Title,MarathonStartDate,firstname, lastname, contactInfo, addinfo
         }
         fetch('http://localhost:5000/apply-applications', {
             method: 'POST',
@@ -41,7 +41,7 @@ const Registration = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                setApply(data)
             })
     }
 
@@ -78,13 +78,13 @@ const Registration = () => {
                     </div>
 
                     <div>
-                        <label htmlFor="marathondate" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="MarathonStartDate" className="block text-sm font-medium text-gray-700">
                             Marathon Date-month/date/year
                         </label>
                         <input
                             type="text"
-                            id="marathondate"
-                            name="marathondate"
+                            id="MarathonStartDate"
+                            name="MarathonStartDate"
                             value={apply.MarathonStartDate} readOnly
                             className="mt-1 p-2 w-full border rounded-md"
                             required
@@ -143,8 +143,8 @@ const Registration = () => {
                         />
                     </div>
                     <div>
-                        <button className="w-full bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition duration-300">
-                            Login
+                        <button className="w-full bg-purple-600 text-white py-2 px-6 rounded-md hover:bg-purple-900 transition duration-300">
+                            Submission
                         </button>
                     </div>
                 </form>

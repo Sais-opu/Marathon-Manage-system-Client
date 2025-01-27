@@ -2,6 +2,8 @@
 import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+
+
 const Details = () => {
     const { _id,MarathonImage, Title, Description, Location, StartRegistrationDate, EndRegistrationDate,MarathonStartDate,RunningDistance } = useLoaderData();
     
@@ -35,11 +37,11 @@ const Details = () => {
                     <p><strong>Registration-End:</strong> {EndRegistrationDate}</p>
                     <p><strong>Marathon-start:</strong> {MarathonStartDate}</p>
                     <p><strong>RunningDistance:</strong> {RunningDistance}</p>
-
+                    
                     {isRegistrationOpen ? (
                         <Link to={`/registration/${_id}`}>
                             <button className="btn bg-purple-600 text-white">
-                                Register
+                                Register Open
                             </button>
                         </Link>
                     ) : (
