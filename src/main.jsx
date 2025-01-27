@@ -23,6 +23,7 @@ import AddMarathon from './components/Dashboard/AddMarathon.jsx'
 import ApplyList from './components/Dashboard/ApplyList.jsx'
 import MarathonList from './components/Dashboard/MarathonList.jsx'
 import UpcomingDetails from './components/Details/UpcomingDetails.jsx'
+import Registration from './components/Dashboard/Registration.jsx'
 
 
 const router = createBrowserRouter([
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/applylist",
         element: <PrivateRoute> <ApplyList></ApplyList> </PrivateRoute>,
+      },
+      {
+        path: "/registration",
+        element: <PrivateRoute> <Registration></Registration></PrivateRoute>,
       },
       {
         path: "/marathon",
