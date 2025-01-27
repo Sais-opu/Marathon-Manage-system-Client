@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/authProvider";
+import Swal from "sweetalert2";
 
 
 const Registration = () => {
@@ -41,7 +42,17 @@ const Registration = () => {
         })
             .then(res => res.json())
             .then(data => {
-                setApply(data)
+                if(data.insertedId){
+                    Swal.fire({
+                        position:"top-end",
+                        icon: 'success',
+                        title: 'Registration succesfull',
+                        text: 'Your Registration has been added successfully.',
+                        showComfirmButton:false,
+                        timer:1500
+                    });
+                    
+                }
             })
     }
 
