@@ -11,7 +11,7 @@ const ApplyList = () => {
     const [list, setList] = useState([])
 
     useEffect(() => {
-        fetch(`https://marathon-manage-system-server-gsjks2n58.vercel.app/job-applylist?email=${user.email}`)
+        fetch(`https://marathon-manage-system-server.vercel.app/job-applylist?email=${user.email}`)
             .then((res) => res.json())
             .then((data) => setList(data))
             .catch((err) => console.error("Failed to fetch marathons:", err));

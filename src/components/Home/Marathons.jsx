@@ -6,12 +6,12 @@ const Marathons = () => {
     const [marathons, setMarathons] = useState([]);
 
     // useEffect(() => {
-    //     fetch('https://marathon-manage-system-server-gsjks2n58.vercel.app/marathon')
+    //     fetch('https://marathon-manage-system-server.vercel.app/marathon')
     //         .then(res => res.json())
     //         .then(data => setMarathons(data))
     // }, [])
     useEffect(() => {
-        fetch('https://marathon-manage-system-server-gsjks2n58.vercel.app/marathon/first6')
+        fetch('https://marathon-manage-system-server.vercel.app/marathon/first6')
             .then((res) => {
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
