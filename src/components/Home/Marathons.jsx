@@ -4,12 +4,6 @@ import MarathonsCard from "./MarathonsCard";
 
 const Marathons = () => {
     const [marathons, setMarathons] = useState([]);
-
-    // useEffect(() => {
-    //     fetch('https://marathon-manage-system-server.vercel.app/marathon')
-    //         .then(res => res.json())
-    //         .then(data => setMarathons(data))
-    // }, [])
     useEffect(() => {
         fetch('https://marathon-manage-system-server.vercel.app/marathon/first6')
             .then((res) => {

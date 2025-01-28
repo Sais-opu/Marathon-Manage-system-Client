@@ -18,18 +18,17 @@ const Details = () => {
     // mm/dd/yyyy
     const formatDate = (dateString) => {
         const date = new Date(dateString);
-        const mm = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-based
+        const mm = String(date.getMonth() + 1).padStart(2, "0"); 
         const dd = String(date.getDate()).padStart(2, "0");
-        const yyyy = date.getFullYear(); // Full 4-digit year
+        const yyyy = date.getFullYear(); 
         return `${mm}/${dd}/${yyyy}`;
     };
 
-    // Convert date strings to Date objects
+    
     const currentDate = new Date();
     const startDate = new Date(StartRegistrationDate);
     const endDate = new Date(EndRegistrationDate);
 
-    // Determine if the registration is open
     const isRegistrationOpen = currentDate >= startDate && currentDate <= endDate;
 
     return (
@@ -49,7 +48,7 @@ const Details = () => {
                     <p><strong>Marathon-start:</strong> {formatDate(MarathonStartDate)}</p>
                     <p><strong>Running Distance:</strong> {RunningDistance}</p>
 
-                    {/* Conditional rendering of buttons */}
+                    
                     {isRegistrationOpen ? (
                         <Link to={`/registration/${_id}`}>
                             <button className="btn bg-purple-600 text-white">

@@ -54,7 +54,7 @@ const Register = () => {
             return false;
         }
 
-        setPasswordError(""); // Clear error if validation passes
+        setPasswordError(""); 
         return true;
     };
 
@@ -214,19 +214,7 @@ const Register = () => {
                 </div>
             </form>
 
-            {/* <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-                transition="bounce"
-            /> */}
+            
         </div>
     );
 };

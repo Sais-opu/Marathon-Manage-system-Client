@@ -10,7 +10,7 @@ const AddMarathon = () => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const initialData = Object.fromEntries(formData.entries());
-        console.log(initialData);
+        
 
         fetch('https://marathon-manage-system-server.vercel.app/marathon', {
             method: 'POST',

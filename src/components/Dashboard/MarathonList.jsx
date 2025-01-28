@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import { Bounce, toast } from "react-toastify";
 
 const MarathonList = () => {
     const [list, setList] = useState([]);
@@ -18,12 +19,12 @@ const MarathonList = () => {
         })
         .then((res) => res.json())
         .then(() => {
-            setList(list.filter((item) => item._id !== id)); // Corrected syntax here
+            setList(list.filter((item) => item._id !== id)); 
             toast.success("Deleted successfully!", {
                 position: "top-center",
                 autoClose: 3000,
                 theme: "light",
-                transition: Bounce, // Adding Bounce transition effect
+                transition: Bounce, 
             });
         })
             .catch ((err) => console.error("Failed to delete marathon:", err));
@@ -47,7 +48,7 @@ const handleUpdate = (id) => {
                     position: "top-center",
                     autoClose: 3000,
                     theme: "light",
-                    transition: Bounce, // Adding Bounce transition effect
+                    transition: Bounce,
                 });
             })
             .catch((err) => console.error("Failed to update marathon:", err));

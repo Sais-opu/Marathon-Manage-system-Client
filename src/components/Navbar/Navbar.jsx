@@ -12,7 +12,7 @@ const Navbar = () => {
     const handleLogout = async () => {
         try {
             await signOutUser();
-            console.log("User logged out successfully");
+            
         } catch (error) {
             console.error("Logout error:", error.message);
             alert("Failed to log out. Please try again.");
