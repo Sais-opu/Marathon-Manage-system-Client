@@ -1,6 +1,8 @@
 
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/authProvider";
+import { Bounce, toast } from "react-toastify";
+
 
 const ApplyList = () => {
     const { user } = useContext(AuthContext);
@@ -19,7 +21,15 @@ const ApplyList = () => {
             method: "DELETE",
         })
             .then((res) => res.json())
-            .then(() => setList(list.filter((item) => item._id !== id)))
+            .then(() => {
+                setList(list.filter((item) => item._id !== id));
+                toast.success("Application deleted successfully!", {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "light",
+                    transition: Bounce,
+                });
+            })
             .catch((err) => console.error("Failed to delete application:", err));
     };
 
@@ -37,6 +47,11 @@ const ApplyList = () => {
                     setList(list.map((item) =>
                         item._id === id ? { ...item, status: updatedStatus } : item
                     ));
+                    toast.success("updated successfully!", {
+                        position: "top-center",
+                        autoClose: 3000,
+                        transition: Bounce,
+                    });
                 })
                 .catch((err) => console.error("Failed to update application:", err));
         }
