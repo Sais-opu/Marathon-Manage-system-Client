@@ -7,7 +7,7 @@ const Marathon = () => {
 
     useEffect(() => {
         
-        fetch('http://localhost:5000/marathon')
+        fetch('https://marathon-manage-system-server-gsjks2n58.vercel.app/marathon')
             .then((res) => res.json())
             .then((data) => setMarathons(data))
             .catch((err) => console.error("Failed to fetch marathon data:", err));

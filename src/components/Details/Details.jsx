@@ -15,7 +15,7 @@ const Details = () => {
         RunningDistance 
     } = useLoaderData();
 
-    // Helper function to format dates as mm/dd/yyyy
+    // mm/dd/yyyy
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const mm = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-based

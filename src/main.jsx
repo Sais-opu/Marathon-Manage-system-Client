@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       {
         path: "/marathon/:id",
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/marathon/${params.id}`), 
+        loader: ({ params }) => fetch(`https://marathon-manage-system-server-gsjks2n58.vercel.app/marathon/${params.id}`), 
       },
       
       {

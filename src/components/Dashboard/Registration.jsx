@@ -11,7 +11,7 @@ const Registration = () => {
     const [apply, setApply] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/marathon/${id}`)
+        fetch(`https://marathon-manage-system-server-gsjks2n58.vercel.app/marathon/${id}`)
             .then((res) => res.json())
             .then((data) => setApply(data))
             .catch((err) => console.error("Failed to fetch marathons:", err));
@@ -33,7 +33,7 @@ const Registration = () => {
             apply_id: id,
             email,Title,MarathonStartDate,firstname, lastname, contactInfo, addinfo
         }
-        fetch('http://localhost:5000/apply-applications', {
+        fetch('https://marathon-manage-system-server-gsjks2n58.vercel.app/apply-applications', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
