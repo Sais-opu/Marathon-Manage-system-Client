@@ -1,4 +1,4 @@
-
+# assignment_category_06
 # Marthon Manage
 
 The Marathon Management System is a full-stack web application designed to help users organize and participate in marathon events seamlessly. It offers an intuitive platform for event organizers and participants, allowing them to manage marathons, register for events, and track their activities—all in one place.
