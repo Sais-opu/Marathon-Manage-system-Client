@@ -32,7 +32,7 @@ The Marathon Management System is a full-stack web application that allows users
 
 - **Frontend**: React, React Router, TailwindCSS, DaisyUI  
 - **Backend**: Firebase, MongoDB  
-- **State Management**: React Toastify, SweetAlert2  
+- **State Management**: React Toastify, SweetAlert2, Vite 
 - **Countdown Timer**: react-countdown-circle-timer  
 - **Deployment**: Vercel, Firebase Hosting
   
