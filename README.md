@@ -66,6 +66,11 @@ npm install
 # Start the development server
 npm run dev
 ```
+```sh
+npm i react-router-dom
+npm i react-toastify
+npm install
+```
 ## 📦 Dependencies  
 
 The project uses the following dependencies:  
