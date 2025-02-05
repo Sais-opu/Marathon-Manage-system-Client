@@ -27,10 +27,27 @@ The Marathon Management System is a full-stack web application designed to help 
 - **Backend**: Firebase, MongoDB  
 - **State Management**: React Toastify, SweetAlert2  
 - **Countdown Timer**: react-countdown-circle-timer  
-- **Deployment**: Vercel, Firebase Hosting  
+- **Deployment**: Vercel, Firebase Hosting
+  
 
 ---
+## Project Setup
 
+To run the project locally, follow these steps:
+
+```sh
+# Clone the repository
+git clone https://github.com/Sais-opu/EduManage-client.git
+
+# Navigate to the project folder
+cd edumanage
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
 ## 📦 Dependencies  
 
 The project uses the following dependencies:  
