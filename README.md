@@ -3,6 +3,13 @@
 ![Marathon Banner](https://i.ibb.co/wNr4ZM6f/marathon.png)
 
 The Marathon Management System is a full-stack web application designed to help users organize and participate in marathon events seamlessly. It offers an intuitive platform for event organizers and participants, allowing them to manage marathons, register for events, and track their activities—all in one place.
+## Project Purpose  
+
+The Marathon Management System is designed to simplify the process of organizing and participating in marathon events. This platform offers a user-friendly experience for both event organizers and participants. It allows for the seamless creation, registration, and tracking of marathons, ensuring that users can manage their events and activities effectively.
+
+## Project Overview  
+
+The Marathon Management System is a full-stack web application that allows users to manage marathon events, register for races, and track progress. The platform features robust functionality for event organizers to create and manage events, while participants can sign up, monitor their participation, and view countdown timers for upcoming races. With an intuitive interface and features like search, sorting, and notifications, this system streamlines the marathon experience for everyone involved.
 
 ## 🌍 Live Demo  
 🔗 [Visit the Marathon Management System Live](https://marathon-manage-system.web.app/)
