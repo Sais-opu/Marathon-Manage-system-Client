@@ -37,10 +37,11 @@ To run the project locally, follow these steps:
 
 ```sh
 # Clone the repository
-git clone https://github.com/Sais-opu/EduManage-client.git
+git clone https://github.com/Sais-opu/Marathon-Manage-system-Client.git
+
 
 # Navigate to the project folder
-cd edumanage
+cd Marathon-Manage-system-Client
 
 # Install dependencies
 npm install
