@@ -67,6 +67,7 @@ npm install
 npm run dev
 ```
 ```sh
+#Or you can tro to install
 npm i react-router-dom
 npm i react-toastify
 npm install
