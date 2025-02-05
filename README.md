@@ -57,7 +57,7 @@ The project uses the following dependencies:
   "react-router-dom": "^7.1.3",
   "react-toastify": "^11.0.3",
   "sweetalert2": "^11.15.10",
-  "mongoose": "^7.0.0"  // MongoDB dependency
+  "mongoose": "^7.0.0"  
 }
 
 "devDependencies": {
