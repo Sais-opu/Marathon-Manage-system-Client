@@ -31,6 +31,16 @@ The Marathon Management System is a full-stack web application designed to help 
   
 
 ---
+
+## Additional Resources
+
+Here are some useful resources to help you understand the technologies used in this project:
+
+- [React.js Documentation](https://reactjs.org/docs/getting-started.html)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Firebase Authentication](https://firebase.google.com/docs/auth)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+
 ## Project Setup
 
 To run the project locally, follow these steps:
