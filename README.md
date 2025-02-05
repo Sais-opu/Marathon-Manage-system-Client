@@ -58,7 +58,7 @@ git clone https://github.com/Sais-opu/Marathon-Manage-system-Client.git
 
 
 # Navigate to the project folder
-cd Marathon-Manage-system-Client
+cd marathon-manage-sustem-client
 
 # Install dependencies
 npm install
