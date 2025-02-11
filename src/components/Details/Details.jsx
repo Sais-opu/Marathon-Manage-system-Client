@@ -32,7 +32,7 @@ const Details = () => {
     return (
         <div className="container mx-auto p-4">
             {/* Card Layout for Marathon Details */}
-            <div className="card card-side bg-base-100 shadow-xl border mx-16">
+            <div className="card card-side bg-gradient-to-t from-purple-700 via-pink-400 to-indigo-800 shadow-xl border mx-16">
                 {/* Left side: Image */}
                 <figure className="p-5">
                     <img
@@ -45,7 +45,7 @@ const Details = () => {
                 {/* Right side: Text content */}
                 <div className="card-body text-left">
                     <h2 className="card-title text-2xl font-semibold">{Title}</h2>
-                    <p className="text-gray-600 mb-4">{Description}</p>
+                    <p className="text-gray-900 mb-4">{Description}</p>
                     <p><strong className="font-medium">Location:</strong> {Location}</p>
                     <p><strong className="font-medium">Registration Start:</strong> {formatDate(StartRegistrationDate)}</p>
                     <p><strong className="font-medium">Registration End:</strong> {formatDate(EndRegistrationDate)}</p>
@@ -56,7 +56,7 @@ const Details = () => {
                     <div className="mt-6">
                         {isRegistrationOpen ? (
                             <Link to={`/registration/${_id}`}>
-                                <button className="btn bg-purple-600 text-white w-full py-2 rounded-md">
+                                <button className="btn bg-purple-600 text-white w-full py-2 rounded-md hover:bg-indigo-600">
                                     Register Now
                                 </button>
                             </Link>
