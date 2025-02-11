@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 import { Bounce, toast } from "react-toastify";
 import Modal from "react-modal"; // Import the modal library
@@ -15,9 +13,11 @@ const customStyles = {
         bottom: "auto",
         marginRight: "-50%",
         transform: "translate(-50%, -50%)",
-        width: "600px",
+        width: "100%",
+        maxWidth: "600px",
         padding: "20px",
-        borderRadius: "10px",
+        borderRadius: "15px",
+        background: "linear-gradient(to bottom, rgba(92, 80, 255, 0.6), rgba(234, 82, 255, 0.6))",
     },
 };
 
@@ -138,42 +138,35 @@ const MarathonList = () => {
     };
 
     return (
-        <div className="flex min-h-screen">
-            {/* <SideBar></SideBar> */}
-            <div className="p-4">
-                <h2 className="text-2xl font-bold mb-4">Total Register Count: {list.length}</h2>
-                {/* <button
-                onClick={() => openAddUpdateModal()}
-                className="btn bg-purple-600 text-white"
-            >
-                Add New Marathon
-            </button> */}
-                <div className="overflow-x-auto">
-                    <table className="table w-full">
+        <div className="flex min-h-screen bg-gradient-to-t from-purple-700 via-pink-400 to-indigo-800">
+            <div className="p-6 w-full max-w-7xl mx-auto">
+                <h2 className="text-2xl font-bold mb-4 text-white">Total Marathon Count: {list.length}</h2>
+                <div className="overflow-x-auto shadow-lg bg-gradient-to-b from-purple-700 via-pink-400 to-indigo-800">
+                    <table className="table w-full table-auto bg-purple-600 rounded-md shadow-md">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Title</th>
-                                <th>Registration Deadline</th>
-                                <th>Actions</th>
+                                <th className="p-3 text-left text-sm font-semibold text-gray-700">#</th>
+                                <th className="p-3 text-left text-sm font-semibold text-gray-700">Title</th>
+                                <th className="p-3 text-left text-sm font-semibold text-gray-700">Registration Deadline</th>
+                                <th className="p-3 text-left text-sm font-semibold text-gray-700">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {list.map((item, index) => (
-                                <tr key={item._id} className="hover:bg-gray-100">
-                                    <th>{index + 1}</th>
-                                    <td>{item.Title}</td>
-                                    <td>{item.EndRegistrationDate || "N/A"}</td>
-                                    <td>
+                                <tr key={item._id} className="hover:bg-purple-900">
+                                    <th className="p-3 text-sm font-medium text-white">{index + 1}</th>
+                                    <td className="p-3 text-sm text-white">{item.Title}</td>
+                                    <td className="p-3 text-sm text-white">{item.EndRegistrationDate || "N/A"}</td>
+                                    <td className="p-3 text-sm">
                                         <button
                                             onClick={() => openAddUpdateModal(item)}
-                                            className="btn bg-purple-600 text-white mr-2"
+                                            className="btn bg-blue-600 text-white px-4 py-2 rounded-md mr-2"
                                         >
                                             Update
                                         </button>
                                         <button
                                             onClick={() => openDeleteModal(item._id)}
-                                            className="btn btn-sm btn-error"
+                                            className="btn bg-red-600 text-white px-4 py-2 rounded-md"
                                         >
                                             Delete
                                         </button>
@@ -191,7 +184,7 @@ const MarathonList = () => {
                     style={customStyles}
                     contentLabel="Add/Update Marathon Modal"
                 >
-                    <h2 className="text-xl font-bold mb-4">
+                    <h2 className="text-xl font-bold mb-4 text-center text-white">
                         {selectedMarathon ? "Update Marathon" : "Add New Marathon"}
                     </h2>
                     <form onSubmit={handleAddUpdateMarathon} className="space-y-4">
@@ -204,7 +197,7 @@ const MarathonList = () => {
                                 id="Title"
                                 name="Title"
                                 defaultValue={selectedMarathon?.Title || ""}
-                                className="mt-1 p-2 w-full border rounded-md"
+                                className="mt-1 p-2 w-full border border-gray-300 rounded-md"
                                 required
                             />
                         </div>
@@ -217,7 +210,7 @@ const MarathonList = () => {
                                 id="StartRegistrationDate"
                                 name="StartRegistrationDate"
                                 defaultValue={selectedMarathon?.StartRegistrationDate || ""}
-                                className="mt-1 p-2 w-full border rounded-md"
+                                className="mt-1 p-2 w-full border border-gray-300 rounded-md"
                                 required
                             />
                         </div>
@@ -230,7 +223,7 @@ const MarathonList = () => {
                                 id="EndRegistrationDate"
                                 name="EndRegistrationDate"
                                 defaultValue={selectedMarathon?.EndRegistrationDate || ""}
-                                className="mt-1 p-2 w-full border rounded-md"
+                                className="mt-1 p-2 w-full border border-gray-300 rounded-md"
                                 required
                             />
                         </div>
@@ -243,7 +236,7 @@ const MarathonList = () => {
                                 id="MarathonStartDate"
                                 name="MarathonStartDate"
                                 defaultValue={selectedMarathon?.MarathonStartDate || ""}
-                                className="mt-1 p-2 w-full border rounded-md"
+                                className="mt-1 p-2 w-full border border-gray-300 rounded-md"
                                 required
                             />
                         </div>
@@ -256,7 +249,7 @@ const MarathonList = () => {
                                 id="Location"
                                 name="Location"
                                 defaultValue={selectedMarathon?.Location || ""}
-                                className="mt-1 p-2 w-full border rounded-md"
+                                className="mt-1 p-2 w-full border border-gray-300 rounded-md"
                                 required
                             />
                         </div>
@@ -268,7 +261,7 @@ const MarathonList = () => {
                                 id="RunningDistance"
                                 name="RunningDistance"
                                 defaultValue={selectedMarathon?.RunningDistance || "25K"}
-                                className="mt-1 p-2 w-full border rounded-md"
+                                className="mt-1 p-2 w-full border border-gray-300 rounded-md"
                                 required
                             >
                                 <option value="25K">25K</option>
@@ -277,56 +270,47 @@ const MarathonList = () => {
                             </select>
                         </div>
                         <div>
-                            <label htmlFor="Description" className="block text-sm font-medium text-gray-700">
-                                Description
-                            </label>
-                            <textarea
-                                id="Description"
-                                name="Description"
-                                defaultValue={selectedMarathon?.Description || ""}
-                                className="mt-1 p-2 w-full border rounded-md"
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="MarathonImage" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="ImageUrl" className="block text-sm font-medium text-gray-700">
                                 Image URL
                             </label>
                             <input
-                                type="text"
-                                id="MarathonImage"
-                                name="MarathonImage"
-                                defaultValue={selectedMarathon?.MarathonImage || ""}
-                                className="mt-1 p-2 w-full border rounded-md"
+                                type="url"
+                                id="ImageUrl"
+                                name="ImageUrl"
+                                defaultValue={selectedMarathon?.ImageUrl || ""}
+                                className="mt-1 p-2 w-full border border-gray-300 rounded-md"
                                 required
                             />
                         </div>
-                        <div className="mt-4 flex justify-end">
-                            <button type="button" onClick={closeAddUpdateModal} className="btn btn-ghost mr-2">
-                                Cancel
-                            </button>
-                            <button type="submit" className="btn btn-primary">
-                                {selectedMarathon ? "Update" : "Add"}
-                            </button>
-                        </div>
+                        <button
+                            type="submit"
+                            className="btn bg-purple-600 text-white mt-4 w-full py-2 rounded-md"
+                        >
+                            {selectedMarathon ? "Update Marathon" : "Add Marathon"}
+                        </button>
                     </form>
                 </Modal>
 
-                {/* Delete Confirmation Modal */}
+                {/* Delete Modal */}
                 <Modal
                     isOpen={isDeleteModalOpen}
                     onRequestClose={closeDeleteModal}
                     style={customStyles}
-                    contentLabel="Delete Marathon Modal"
+                    contentLabel="Delete Marathon"
                 >
-                    <h2 className="text-xl font-bold mb-4">Confirm Deletion</h2>
-                    <p>Are you sure you want to delete this marathon?</p>
-                    <div className="mt-4 flex justify-end">
-                        <button type="button" onClick={closeDeleteModal} className="btn btn-ghost mr-2">
-                            Cancel
+                    <h2 className="text-xl font-bold mb-4 text-center text-white">Are you sure you want to delete this marathon?</h2>
+                    <div className="flex justify-around">
+                        <button
+                            onClick={handleDelete}
+                            className="btn bg-red-600 text-white px-4 py-2 rounded-md"
+                        >
+                            Yes, Delete
                         </button>
-                        <button type="button" onClick={handleDelete} className="btn btn-error">
-                            Delete
+                        <button
+                            onClick={closeDeleteModal}
+                            className="btn bg-gray-400 text-white px-4 py-2 rounded-md"
+                        >
+                            Cancel
                         </button>
                     </div>
                 </Modal>
@@ -336,6 +320,3 @@ const MarathonList = () => {
 };
 
 export default MarathonList;
-
-
-

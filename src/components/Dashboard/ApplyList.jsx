@@ -181,13 +181,16 @@ const ApplyList = () => {
                             <label className="label">
                                 <span className="label-text">Status</span>
                             </label>
-                            <input
-                                type="text"
+                            <select
                                 name="status"
-                                defaultValue={selectedApplication?.status || ""}
-                                className="input input-bordered"
+                                defaultValue={selectedApplication?.status || "Pending"} // Default to "Pending"
+                                className="select select-bordered"
                                 required
-                            />
+                            >
+                                <option value="Pending">Pending</option>
+                                <option value="Ongoing">Ongoing</option>
+                                <option value="Selected">Selected</option>
+                            </select>
                         </div>
                         <div className="mt-4 flex justify-end">
                             <button type="button" onClick={closeUpdateModal} className="btn btn-ghost mr-2">
