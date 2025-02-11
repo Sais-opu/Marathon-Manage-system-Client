@@ -18,8 +18,8 @@ const Marathons = () => {
 
     return (
         <div>
-            <h1 className="text-6xl text-center font-bold py-10">Lets start Marathon</h1>
-            <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
+            <h1 className="text-6xl text-center  font-bold py-10">Lets start Marathon</h1>
+            <div className="gap-4 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
                 {
                     marathons.map(marathon => <MarathonsCard key={marathon._id} marathon={marathon}></MarathonsCard>)
                 }

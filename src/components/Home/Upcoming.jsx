@@ -14,7 +14,7 @@ const Upcoming = () => {
     return (
         <div>
             <h1 className="text-6xl text-center font-bold py-10">UpComing Marathon</h1>
-            <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
+            <div className="gap-4 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
                 {
                     upcomings.map(upcoming=> <UpcomingCard upcoming={upcoming} key={upcoming.id}></UpcomingCard>)
                 }

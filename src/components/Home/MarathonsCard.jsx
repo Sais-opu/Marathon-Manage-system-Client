@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const MarathonsCard = ({ marathon }) => {
     const {_id, MarathonImage, Title, Location, StartRegistrationDate, EndRegistrationDate } = marathon;
     return (
-        <div className="card card-compact bg-base-100 w-96 shadow-xl border p-4 gap-4">
+        <div className="card card-compact bg-gradient-to-r from-indigo-800 to-purple-600 w-96 shadow-xl border p-2">
             <img
                 className="overflow-hidden object-cover border"
                 src={MarathonImage}

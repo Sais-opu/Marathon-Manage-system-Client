@@ -5,10 +5,10 @@ const UpcomingCard = ({ upcoming }) => {
 
     return (
         <div>
-            <div className="card card-compact bg-base-100 w-96 shadow-xl border p-4 gap-4">
+            <div className="card card-compact bg-gradient-to-r from-indigo-800 to-purple-600 w-96 shadow-xl border p-2">
                 <img className="overflow-hidden object-cover border" src={marathon_image} alt={title} />
                 <div className="card-body">
-                    <h2 className="card-title">{title}</h2>
+                    <h2 className="card-title text-3xl">{title}</h2>
                     <p><strong>Location:</strong> {location}</p>
                     <p><strong>Description:</strong> {description}</p>
                     <p><strong>Registration-Start:</strong> {start_registration_date}</p>
