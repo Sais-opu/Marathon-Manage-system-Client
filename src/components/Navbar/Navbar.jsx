@@ -80,7 +80,7 @@ const Navbar = () => {
             )}
 
             {/* Navbar */}
-            <div className="navbar bg-gradient-to-t from-purple-800 to-purple-400">
+            <div className="navbar bg-gradient-to-t from-purple-800 to-purple-400 sticky top-0 z-50 shadow-md bg-opacity-40 backdrop-blur-md">
                 <div className="navbar-start">
                     {/* Mobile Menu */}
                     <div className="dropdown">
