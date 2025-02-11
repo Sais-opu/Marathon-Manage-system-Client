@@ -1,11 +1,11 @@
-import React from "react";
-import { NavLink} from "react-router-dom";
-import SideBar from "../Sidebar/SideBar";
+import { NavLink } from "react-router-dom";
 
-const Dashboard = () => {
+
+
+const SideBar = () => {
     return (
-        <div className="flex h-screen">
-            {/* <aside className="w-64 bg-gray-100 border-r h-screen sticky top-0">
+        <div>
+            <aside className="w-64 bg-gray-100 border-r h-screen sticky top-0">
                 <nav className="menu p-4 flex flex-col gap-4">
                     <NavLink
                         to="/dashboard/addmarathon"
@@ -38,10 +38,9 @@ const Dashboard = () => {
                         My Apply List
                     </NavLink>
                 </nav>
-            </aside> */}
-            <SideBar></SideBar>
+            </aside>
         </div>
     );
 };
 
-export default Dashboard;
+export default SideBar;

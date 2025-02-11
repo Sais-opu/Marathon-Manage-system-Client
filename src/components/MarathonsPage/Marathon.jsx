@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Marathon = () => {
     const [marathons, setMarathons] = useState([]);
+    
 
     useEffect(() => {
         
@@ -24,7 +25,7 @@ const Marathon = () => {
                     >
                         <img
                             className="overflow-hidden object-cover border rounded-lg h-48"
-                            src={marathon.MarathonImage} // Use MarathonImage for the image URL
+                            src={marathon.MarathonImage} 
                             alt={`Image of ${marathon.Title}`}
                         />
                         <div className="card-body">

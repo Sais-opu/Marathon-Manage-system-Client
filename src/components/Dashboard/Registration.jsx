@@ -1,60 +1,92 @@
-import { Navigate, useParams } from "react-router-dom";
 
+
+import { Navigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/authProvider";
 import Swal from "sweetalert2";
 
-
 const Registration = () => {
     const { id } = useParams();
     const { user } = useContext(AuthContext);
-    const [apply, setApply] = useState([]);
 
+    // Initialize the apply state with default values
+    const [apply, setApply] = useState({
+        Title: "",
+        MarathonStartDate: "",
+    });
+
+    // Fetch marathon data when component mounts
     useEffect(() => {
         fetch(`https://marathon-manage-system-server.vercel.app/marathon/${id}`)
             .then((res) => res.json())
-            .then((data) => setApply(data))
-            .catch((err) => console.error("Failed to fetch marathons:", err));
-    }, []);
-    const submitApply = e => {
+            .then((data) => {
+                setApply({
+                    Title: data.Title || "",
+                    MarathonStartDate: data.MarathonStartDate || "",
+                });
+            })
+            .catch((err) => console.error("Failed to fetch marathon:", err));
+    }, [id]);
+
+    // Handle form submission
+    const submitApply = (e) => {
+        e.preventDefault();
         
         const form = e.target;
-        const email = form.email.value
-        const MarathonStartDate = form.MarathonStartDate.value
-        const Title = form.Title.value
-        const firstname = form.firstname.value
-        const lastname = form.lastname.value
-        const contactInfo = form.contactInfo.value
-        const addinfo = form.addinfo.value
-        
+        const email = form.email.value;
+        const MarathonStartDate = form.MarathonStartDate.value;
+        const Title = form.Title.value;
+        const firstname = form.firstname.value;
+        const lastname = form.lastname.value;
+        const contactInfo = form.contactInfo.value;
+        const addinfo = form.addinfo.value;
 
-        // apply info
+        // Apply data
         const listApply = {
             apply_id: id,
-            email,Title,MarathonStartDate,firstname, lastname, contactInfo, addinfo
-        }
+            email,
+            Title,
+            MarathonStartDate,
+            firstname,
+            lastname,
+            contactInfo,
+            addinfo,
+        };
+
+        // Send data to the backend
         fetch('https://marathon-manage-system-server.vercel.app/apply-applications', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(listApply)
+            body: JSON.stringify(listApply),
         })
-            .then(res => res.json())
-            .then(data => {
-                if(data.insertedId){
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Response from server:", data);
+                if (data.insertedId) {
                     Swal.fire({
-                        position:"top-end",
+                        position: "top-end",
                         icon: 'success',
-                        title: 'Registration succesfull',
-                        text: 'Your Registration has been added successfully.',
-                        showComfirmButton:false,
-                        timer:1500
+                        title: 'Registration successful',
+                        text: 'Your registration has been added successfully.',
+                        showConfirmButton: false,
+                        timer: 1500,
                     });
-                    
                 }
             })
-    }
+            .catch((err) => {
+                console.error("Error during registration:", err);
+                Swal.fire({
+                    position: "top-end",
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'There was an error. Please try again later.',
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+            });
+    };
 
     return (
         <div>
@@ -69,11 +101,13 @@ const Registration = () => {
                             type="text"
                             id="email"
                             name="email"
-                            value={user.email} readOnly
+                            value={user.email || ""}
+                            readOnly
                             className="mt-1 p-2 w-full border rounded-md"
                             required
                         />
                     </div>
+
                     <div>
                         <label htmlFor="Title" className="block text-sm font-medium text-gray-700">
                             Title
@@ -82,7 +116,8 @@ const Registration = () => {
                             type="text"
                             id="Title"
                             name="Title"
-                            value={apply.Title} readOnly
+                            value={apply.Title || ""}
+                            readOnly
                             className="mt-1 p-2 w-full border rounded-md"
                             required
                         />
@@ -96,11 +131,13 @@ const Registration = () => {
                             type="text"
                             id="MarathonStartDate"
                             name="MarathonStartDate"
-                            value={apply.MarathonStartDate} readOnly
+                            value={apply.MarathonStartDate || ""}
+                            readOnly
                             className="mt-1 p-2 w-full border rounded-md"
                             required
                         />
                     </div>
+
                     <div>
                         <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
                             First name
@@ -114,6 +151,7 @@ const Registration = () => {
                             required
                         />
                     </div>
+
                     <div>
                         <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
                             Last name
@@ -127,6 +165,7 @@ const Registration = () => {
                             required
                         />
                     </div>
+
                     <div>
                         <label htmlFor="contactInfo" className="block text-sm font-medium text-gray-700">
                             Contact Info
@@ -140,6 +179,7 @@ const Registration = () => {
                             required
                         />
                     </div>
+
                     <div>
                         <label htmlFor="additinInfo" className="block text-sm font-medium text-gray-700">
                             Additional Info
@@ -153,16 +193,16 @@ const Registration = () => {
                             required
                         />
                     </div>
+
                     <div>
                         <button className="w-full bg-purple-600 text-white py-2 px-6 rounded-md hover:bg-purple-900 transition duration-300">
-                            Submission
+                            Submit
                         </button>
                     </div>
                 </form>
             </div>
         </div>
-    )
-}
-
+    );
+};
 
 export default Registration;

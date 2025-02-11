@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/authProvider";
 import Swal from 'sweetalert2';
+import SideBar from "../Sidebar/SideBar";
 
 
 const AddMarathon = () => {
@@ -35,7 +36,9 @@ const AddMarathon = () => {
     };
 
     return (
-        <div>
+        
+        <div className="flex  min-h-screen">
+            <SideBar></SideBar>
             <div className="md:px-32">
                 <h2 className="font-extrabold text-4xl my-6">Add New Marathon</h2>
                 <form onSubmit={handleAddMarahton} className="space-y-6">
