@@ -2,7 +2,7 @@
 import logo from '../../assets/logo.jpg'
 const Footer = () => {
     return (
-        <footer className="footer footer-center bg-gray-800 text-white rounded p-10">
+        <footer className="footer footer-center bg-gradient-to-b from-purple-800 to-indigo-600 text-white rounded p-10">
                 <img className='w-16' src={logo}alt="" />
             <nav className="grid grid-flow-col gap-4">
                 <a className="link link-hover">About us</a>
