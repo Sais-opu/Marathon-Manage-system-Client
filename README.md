@@ -19,7 +19,6 @@ The Marathon Management System is a full-stack web application that allows users
 ## 🚀 Features  
 
 - **Event Management**: Create, update, and delete marathon events with essential details such as location, registration dates, and running distances.  
-- **User Dashboard**: Manage marathon applications and track your activities through a personalized dashboard.  
 - **Secure Authentication**: Email/password login with strong password validation and optional Google/GitHub login.  
 - **Countdown Timers**: View real-time countdowns for upcoming marathon events.  
 - **Search and Sorting**: Easily search applications by title and sort marathons by creation date.  
