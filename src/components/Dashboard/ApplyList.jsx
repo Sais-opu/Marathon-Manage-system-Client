@@ -1,5 +1,3 @@
-
-
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/authProvider";
 import { Bounce, toast } from "react-toastify";
@@ -18,6 +16,8 @@ const customStyles = {
         width: "400px",
         padding: "20px",
         borderRadius: "10px",
+        backgroundColor: "#6B46C1", // Adjusted to match the theme (purple)
+        color: "white", // White text for contrast
     },
 };
 
@@ -31,15 +31,14 @@ const ApplyList = () => {
 
     // Fetch applications
     useEffect(() => {
-            console.log(user.email)
-            fetch(`https://marathon-manage-system-server.vercel.app/job-applylist?email=${user.email}`)
-                .then((res) => res.json())
-                .then((data) => {
-                    console.log("Data received:", data); // Log data here
-                    setList(data);
-                })
-                .catch((err) => console.error("Failed to fetch applications:", err));
-        
+        console.log(user.email);
+        fetch(`https://marathon-manage-system-server.vercel.app/job-applylist?email=${user.email}`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Data received:", data); // Log data here
+                setList(data);
+            })
+            .catch((err) => console.error("Failed to fetch applications:", err));
     }, [user?.email]);
 
     // Handle Update Modal Open
@@ -128,9 +127,8 @@ const ApplyList = () => {
     };
 
     return (
-        <div className="flex min-h-screen">
-            <SideBar></SideBar>
-            <div className="p-4">
+        <div className="flex justify-center items-center min-h-screen bg-gradient-to-t from-purple-700 via-pink-400 to-indigo-800 px-4">
+            <div className="bg-purple-600 text-white md:w-2/3 w-full p-10 rounded-lg shadow-2xl">
                 <h2 className="text-2xl font-bold mb-4">My Apply List: {list.length}</h2>
                 <div className="overflow-x-auto">
                     <table className="table w-full">
@@ -145,7 +143,7 @@ const ApplyList = () => {
                         </thead>
                         <tbody>
                             {list.map((item, index) => (
-                                <tr key={item._id} className="hover:bg-gray-100">
+                                <tr key={item._id} className="hover:bg-purple-900">
                                     <th>{index + 1}</th>
                                     <td>{item.Title}</td>
                                     <td>{item.MarathonStartDate}</td>

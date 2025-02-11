@@ -1,17 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/authProvider";
 import Swal from 'sweetalert2';
-import SideBar from "../Sidebar/SideBar";
-
 
 const AddMarathon = () => {
     const { user } = useContext(AuthContext);
 
-    const handleAddMarahton = e => {
+    const handleAddMarathon = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const initialData = Object.fromEntries(formData.entries());
-        
 
         fetch('https://marathon-manage-system-server.vercel.app/marathon', {
             method: 'POST',
@@ -20,8 +17,8 @@ const AddMarathon = () => {
             },
             body: JSON.stringify(initialData),
         })
-        .then(res => res.json())
-        .then(data => {
+        .then((res) => res.json())
+        .then((data) => {
             if (data.insertedId) {
                 Swal.fire({
                     position: "top-end",
@@ -32,84 +29,81 @@ const AddMarathon = () => {
                     timer: 1500,
                 });
             }
-        })
+        });
     };
 
     return (
-        
-        <div className="flex  min-h-screen">
-            <SideBar></SideBar>
-            <div className="md:px-32">
-                <h2 className="font-extrabold text-4xl my-6">Add New Marathon</h2>
-                <form onSubmit={handleAddMarahton} className="space-y-6">
+        <div className="flex justify-center items-center min-h-screen bg-gradient-to-t from-purple-700 via-pink-400 to-indigo-800 px-4">
+            <div className="bg-purple-600 text-white md:w-2/3 w-full p-10 rounded-lg shadow-2xl">
+                <h2 className="text-center font-extrabold text-4xl mb-8">Add New Marathon</h2>
+                <form onSubmit={handleAddMarathon} className="space-y-6">
+                    {/* Marathon Title */}
                     <div>
-                        <label htmlFor="Title" className="block text-sm font-medium text-gray-700">
-                            Marathon Title
-                        </label>
+                        <label htmlFor="Title" className="block text-lg font-medium">Marathon Title</label>
                         <input
                             type="text"
                             id="Title"
                             name="Title"
-                            className="mt-1 p-2 w-full border rounded-md"
+                            className="mt-2 p-3 w-full border border-gray-300 rounded-md text-black"
                             required
                         />
                     </div>
-                    <div>
-                        <label htmlFor="StartRegistrationDate" className="block text-sm font-medium text-gray-700">
-                            Start Registration Date
-                        </label>
-                        <input
-                            type="date"
-                            id="StartRegistrationDate"
-                            name="StartRegistrationDate"
-                            className="mt-1 p-2 w-full border rounded-md"
-                            required
-                        />
+
+                    {/* Registration Dates */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label htmlFor="StartRegistrationDate" className="block text-lg font-medium">Start Registration Date</label>
+                            <input
+                                type="date"
+                                id="StartRegistrationDate"
+                                name="StartRegistrationDate"
+                                className="mt-2 p-3 w-full border border-gray-300 rounded-md text-black"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="EndRegistrationDate" className="block text-lg font-medium">End Registration Date</label>
+                            <input
+                                type="date"
+                                id="EndRegistrationDate"
+                                name="EndRegistrationDate"
+                                className="mt-2 p-3 w-full border border-gray-300 rounded-md text-black"
+                                required
+                            />
+                        </div>
                     </div>
+
+                    {/* Marathon Start Date */}
                     <div>
-                        <label htmlFor="EndRegistrationDate" className="block text-sm font-medium text-gray-700">
-                            End Registration Date
-                        </label>
-                        <input
-                            type="date"
-                            id="EndRegistrationDate"
-                            name="EndRegistrationDate"
-                            className="mt-1 p-2 w-full border rounded-md"
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="MarathonStartDate" className="block text-sm font-medium text-gray-700">
-                            Marathon Start Date
-                        </label>
+                        <label htmlFor="MarathonStartDate" className="block text-lg font-medium">Marathon Start Date</label>
                         <input
                             type="date"
                             id="MarathonStartDate"
                             name="MarathonStartDate"
-                            className="mt-1 p-2 w-full border rounded-md"
+                            className="mt-2 p-3 w-full border border-gray-300 rounded-md text-black"
                             required
                         />
                     </div>
+
+                    {/* Location */}
                     <div>
-                        <label htmlFor="Location" className="block text-sm font-medium text-gray-700">
-                            Location
-                        </label>
+                        <label htmlFor="Location" className="block text-lg font-medium">Location</label>
                         <input
                             type="text"
                             id="Location"
                             name="Location"
-                            className="mt-1 p-2 w-full border rounded-md"
+                            className="mt-2 p-3 w-full border border-gray-300 rounded-md text-black"
                             required
                         />
                     </div>
+
+                    {/* Running Distance */}
                     <div>
-                        <label htmlFor="RunningDistance" className="block text-sm font-medium text-gray-700">
-                            Running Distance
-                        </label>
+                        <label htmlFor="RunningDistance" className="block text-lg font-medium">Running Distance</label>
                         <select
                             id="RunningDistance"
                             name="RunningDistance"
-                            className="mt-1 p-2 w-full border rounded-md"
+                            className="mt-2 p-3 w-full border border-gray-300 rounded-md text-black"
                             required
                         >
                             <option value="25K">25K</option>
@@ -117,45 +111,47 @@ const AddMarathon = () => {
                             <option value="10K">10K</option>
                         </select>
                     </div>
+
+                    {/* Description */}
                     <div>
-                        <label htmlFor="Description" className="block text-sm font-medium text-gray-700">
-                            Description
-                        </label>
+                        <label htmlFor="Description" className="block text-lg font-medium">Description</label>
                         <textarea
                             id="Description"
                             name="Description"
-                            className="mt-1 p-2 w-full border rounded-md"
+                            className="mt-2 p-3 w-full border border-gray-300 rounded-md text-black"
                             required
                         />
                     </div>
+
+                    {/* Email (Read-Only) */}
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                            Email
-                        </label>
+                        <label htmlFor="email" className="block text-lg font-medium">Email</label>
                         <input
                             type="text"
                             id="email"
                             name="email"
                             value={user?.email || ''}
                             readOnly
-                            className="mt-1 p-2 w-full border rounded-md"
+                            className="mt-2 p-3 w-full border border-gray-300 rounded-md text-black bg-gray-200"
                             required
                         />
                     </div>
+
+                    {/* Image URL */}
                     <div>
-                        <label htmlFor="MarathonImage" className="block text-sm font-medium text-gray-700">
-                            Image URL
-                        </label>
+                        <label htmlFor="MarathonImage" className="block text-lg font-medium">Image URL</label>
                         <input
                             type="text"
                             id="MarathonImage"
                             name="MarathonImage"
-                            className="mt-1 p-2 w-full border rounded-md"
+                            className="mt-2 p-3 w-full border border-gray-300 rounded-md text-black"
                             required
                         />
                     </div>
+
+                    {/* Submit Button */}
                     <div>
-                        <button className="w-full bg-purple-600 text-white py-2 px-6 rounded-md hover:bg-purple-900 transition duration-300">
+                        <button className="w-full bg-white text-purple-800 font-bold py-3 px-6 rounded-md hover:bg-purple-500 hover:text-white transition duration-300 text-lg">
                             Submit
                         </button>
                     </div>

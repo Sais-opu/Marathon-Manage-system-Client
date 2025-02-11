@@ -2,7 +2,7 @@
 import logo from '../../assets/logo.jpg'
 const Footer = () => {
     return (
-        <footer className="footer footer-center bg-black text-white rounded p-10">
+        <footer className="footer footer-center bg-gray-800 text-white rounded p-10">
                 <img className='w-16' src={logo}alt="" />
             <nav className="grid grid-flow-col gap-4">
                 <a className="link link-hover">About us</a>
@@ -37,7 +37,7 @@ const Footer = () => {
                 </div>
             </nav>
             <aside>
-                <p>Copyright © {new Date().getFullYear()} - All right reserved by Edumanage Ltd</p>
+                <p>Copyright © {new Date().getFullYear()} - All right reserved by Marathon Management Ltd</p>
             </aside>
         </footer>
     );

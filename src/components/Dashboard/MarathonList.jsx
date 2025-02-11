@@ -139,7 +139,7 @@ const MarathonList = () => {
 
     return (
         <div className="flex min-h-screen">
-            <SideBar></SideBar>
+            {/* <SideBar></SideBar> */}
             <div className="p-4">
                 <h2 className="text-2xl font-bold mb-4">Total Register Count: {list.length}</h2>
                 {/* <button

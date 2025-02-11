@@ -24,6 +24,7 @@ import ApplyList from './components/Dashboard/ApplyList.jsx'
 import MarathonList from './components/Dashboard/MarathonList.jsx'
 import UpcomingDetails from './components/Details/UpcomingDetails.jsx'
 import Registration from './components/Dashboard/Registration.jsx'
+import AboutUsPage from './components/About/AboutUsPage.jsx'
 
 
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       },
       {
+        path: "/AboutUsPage",
+        element: <PrivateRoute><AboutUsPage></AboutUsPage></PrivateRoute>,
+      },
+      {
         path: "/marathon/:id",
         element: <PrivateRoute><Details></Details></PrivateRoute>,
         loader: ({ params }) => fetch(`https://marathon-manage-system-server.vercel.app/marathon/${params.id}`), 
@@ -59,7 +64,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute> <UpcomingDetails></UpcomingDetails> </PrivateRoute>,
       },
       {
-        path: "/addmarathon",
+        path: "/dashboard/addmarathon",
         element: <PrivateRoute> <AddMarathon></AddMarathon>  </PrivateRoute>,
       },
       {
@@ -67,7 +72,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute> <MarathonList></MarathonList>  </PrivateRoute>,
       },
       {
-        path: "/applylist",
+        path: "/dashboard/applylist",
         element: <PrivateRoute> <ApplyList></ApplyList> </PrivateRoute>,
       },
       {
