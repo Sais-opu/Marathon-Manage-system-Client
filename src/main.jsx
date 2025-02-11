@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/AboutUsPage",
-        element: <PrivateRoute><AboutUsPage></AboutUsPage></PrivateRoute>,
+        element: <AboutUsPage></AboutUsPage>,
       },
       {
         path: "/marathon/:id",

@@ -32,19 +32,19 @@ const Details = () => {
     return (
         <div className="container mx-auto p-4">
             {/* Card Layout for Marathon Details */}
-            <div className="card card-side bg-gradient-to-t from-purple-700 via-pink-400 to-indigo-800 shadow-xl border mx-16">
+            <div className="card card-side bg-gradient-to-t from-purple-700 to-indigo-800 shadow-xl border mx-auto w-full max-w-screen-lg">
                 {/* Left side: Image */}
-                <figure className="p-5">
+                <figure className="p-5 flex-shrink-0">
                     <img
-                        className="w-[600px] rounded-xl"
+                        className="w-full max-w-[600px] h-auto rounded-xl"
                         src={MarathonImage}
                         alt={`Image of ${Title}`}
                     />
                 </figure>
                 
                 {/* Right side: Text content */}
-                <div className="card-body text-left">
-                    <h2 className="card-title text-2xl font-semibold">{Title}</h2>
+                <div className="card-body text-left flex-1 p-5">
+                    <h2 className="card-title text-3xl font-semibold mb-4 text-red-600">{Title}</h2>
                     <p className="text-gray-900 mb-4">{Description}</p>
                     <p><strong className="font-medium">Location:</strong> {Location}</p>
                     <p><strong className="font-medium">Registration Start:</strong> {formatDate(StartRegistrationDate)}</p>
