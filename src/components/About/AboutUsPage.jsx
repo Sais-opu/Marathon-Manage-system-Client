@@ -3,7 +3,7 @@ import profileImage from "../../assets/linkin-modified.png"; // Importing the im
 
 const AboutUsPage = () => {
     return (
-        <div className="p-8 min-h-screen bg-gradient-to-br from-purple-700 via-pink-500 to-blue-600">
+        <div className="p-8 min-h-screen ">
             <div className="max-w-4xl mx-auto bg-white/90 rounded-lg shadow-2xl overflow-hidden">
                 {/* Header Section */}
                 <div className="bg-gradient-to-r from-purple-800 via-pink-600 to-blue-500 text-white py-10 flex flex-col md:flex-row items-center justify-center">
@@ -22,7 +22,7 @@ const AboutUsPage = () => {
                 {/* Main Content */}
                 <div className="p-8 space-y-8">
                     {/* About Me Section */}
-                    <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div className="bg-white p-6 rounded-lg shadow-2xl hover:shadow-xl transition border-black">
                         <h2 className="text-2xl font-semibold mb-4 text-purple-700">About Me</h2>
                         <p className="text-gray-700 leading-relaxed">
                             I’m Md Saidul Islam Apu, a passionate web developer and university student
@@ -34,7 +34,7 @@ const AboutUsPage = () => {
                     </div>
 
                     {/* Skills Section */}
-                    <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div className="bg-white p-6 rounded-lg shadow-2xl  hover:shadow-xl transition">
                         <h2 className="text-2xl font-semibold mb-4 text-pink-600">Skills</h2>
                         <p className="text-gray-700 leading-relaxed">
                             <strong>Languages:</strong> English, Bangla<br />
@@ -43,7 +43,7 @@ const AboutUsPage = () => {
                     </div>
 
                     {/* Projects Section */}
-                    <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div className="bg-white p-6 rounded-lg shadow-2xl  hover:shadow-xl transition">
                         <h2 className="text-2xl font-semibold mb-4 text-blue-600">Projects</h2>
                         <ul className="text-gray-700 space-y-4">
                             <li>
