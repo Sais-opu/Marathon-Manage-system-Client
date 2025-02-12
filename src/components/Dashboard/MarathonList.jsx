@@ -139,10 +139,10 @@ const MarathonList = () => {
 
     return (
         <div className="flex min-h-screen ">
-            <div className="p-6 w-full max-w-7xl mx-auto">
-                <div className="overflow-x-auto shadow-lg bg-gradient-to-b from-purple-700 via-pink-400 to-indigo-800">
+            <div className="mb-6 w-full max-w-7xl mx-auto">
+                <div className="overflow-x-auto shadow-lg bg-gradient-to-b my-4 from-purple-700 via-pink-400 to-indigo-800">
                 <h2 className="text-2xl font-bold mb-4 text-white">Total Marathon Count: {list.length}</h2>
-                    <table className="table w-full table-auto bg-purple-600 rounded-md shadow-md">
+                    <table className="table w-full table-auto from-purple-700 to-indigo-800 rounded-md shadow-md">
                     
                         <thead>
                             <tr>
@@ -161,13 +161,13 @@ const MarathonList = () => {
                                     <td className="p-3 text-sm">
                                         <button
                                             onClick={() => openAddUpdateModal(item)}
-                                            className="btn bg-blue-600 text-white px-4 py-2 rounded-md mr-2"
+                                            className="btn bg-purple-600 text-white px-4 py-2 rounded-md mr-2"
                                         >
                                             Update
                                         </button>
                                         <button
                                             onClick={() => openDeleteModal(item._id)}
-                                            className="btn bg-red-600 text-white px-4 py-2 rounded-md"
+                                            className="btn bg-blue-800 text-white px-4 py-2 rounded-md"
                                         >
                                             Delete
                                         </button>

@@ -124,8 +124,8 @@ const ApplyList = () => {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen px-4 overflow-x-hidden">
-            <div className="bg-purple-600 text-white w-full max-w-4xl p-6 rounded-lg shadow-2xl">
+        <div className="flex sm:-gap-2 justify-center items-center min-h-screen  lg:mx-4 overflow-x-hidden">
+            <div className="bg-purple-600 text-white w-full max-w-4xl mb-4 rounded-lg shadow-2xl">
                 <h2 className="text-2xl font-bold mb-4">My Apply List: {list.length}</h2>
                 <div className="overflow-x-auto">
                     <table className="table w-full">
@@ -140,12 +140,12 @@ const ApplyList = () => {
                         </thead>
                         <tbody>
                             {list.map((item, index) => (
-                                <tr key={item._id} className="hover:bg-purple-900 border-white">
+                                <tr key={item._id} className="hover:bg-indigo-400 border-white">
                                     <th>{index + 1}</th>
                                     <td>{item.Title}</td>
                                     <td>{item.MarathonStartDate}</td>
                                     <td>{item.status || "Pending"}</td>
-                                    <td className="flex flex-wrap gap-2 justify-center">
+                                    <td className="flex flex-wrap  justify-center">
                                         <button
                                             onClick={() => openUpdateModal(item)}
                                             className="btn btn-sm btn-primary w-full sm:w-auto"
@@ -154,7 +154,7 @@ const ApplyList = () => {
                                         </button>
                                         <button
                                             onClick={() => openDeleteModal(item._id)}
-                                            className="btn btn-sm btn-error w-full sm:w-auto"
+                                            className="btn btn-sm btn-error  w-full sm:w-auto"
                                         >
                                             Delete
                                         </button>
