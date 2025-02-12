@@ -1,18 +1,30 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-
 const Marathon = () => {
     const [marathons, setMarathons] = useState([]);
+    const [loading, setLoading] = useState(true); // Add loading state
     
-
     useEffect(() => {
-        
         fetch('https://marathon-manage-system-server.vercel.app/marathon')
             .then((res) => res.json())
-            .then((data) => setMarathons(data))
-            .catch((err) => console.error("Failed to fetch marathon data:", err));
+            .then((data) => {
+                setMarathons(data);
+                setLoading(false); // Set loading to false once data is fetched
+            })
+            .catch((err) => {
+                console.error("Failed to fetch marathon data:", err);
+                setLoading(false); // Set loading to false even if there's an error
+            });
     }, []);
+
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <div className="spinner-border animate-spin inline-block w-16 h-16 border-4 border-solid rounded-full border-purple-600 border-t-transparent"></div>
+            </div>
+        );
+    }
 
     return (
         <div className="">
