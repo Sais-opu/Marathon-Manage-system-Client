@@ -36,16 +36,8 @@ const Navbar = () => {
                 </NavLink>
             </li>
 
-            {/* Conditional Links for Logged-in Users */}
             {user && user.displayName && (
                 <>
-                    {/* <li>
-                        <NavLink to="/dashboard"
-                            className={({ isActive }) => isActive ? "bg-purple-800 text-white px-4 py-2 rounded" : ""}>
-                            Dashboard
-                        </NavLink>
-                    </li> */}
-
                     <li>
                         <NavLink to="/dashboard/addmarathon"
                             className={({ isActive }) => isActive ? "bg-purple-600 text-white px-4 py-2 rounded border-2 border-2" : "hover:shadow-2xl  hover:bg-indigo-500 hover:underline"}>
@@ -71,7 +63,6 @@ const Navbar = () => {
 
     return (
         <div>
-            {/* Welcome Message */}
             {user && user.displayName && (
                 <div className="bg-purple-700 text-center py-2">
                     <span className="text-sm text-black font-medium">
@@ -80,10 +71,8 @@ const Navbar = () => {
                 </div>
             )}
 
-            {/* Navbar */}
-            <div className="navbar bg-gradient-to-t from-purple-800 to-purple-400 sticky top-0 z-50 shadow-md bg-opacity-40 backdrop-blur-md">
+            <div className="navbar bg-gradient-to-t from-purple-800 to-purple-400 sticky top-0 z-50 shadow-md bg-opacity-40 backdrop-blur-md w-full">
                 <div className="navbar-start">
-                    {/* Mobile Menu */}
                     <div className="dropdown">
                         <button tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -101,19 +90,16 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                    {/* Logo */}
                     <NavLink to="/" className="btn btn-ghost normal-case md:text-xl font-bold flex">
                         <img className="w-10" src={logo} alt="logo" />
                         <p>Marathon Manage</p>
                     </NavLink>
                 </div>
 
-                {/* Navbar Center for Larger Screens */}
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">{links}</ul>
                 </div>
 
-                {/* Navbar End (Profile & Auth Buttons) */}
                 <div className="navbar-end gap-4 flex items-center">
                     {user && user.photoURL && (
                         <div className="relative group">
