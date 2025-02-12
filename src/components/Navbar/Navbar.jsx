@@ -35,14 +35,14 @@ const Navbar = () => {
     );
 
     return (
-        <div>
+        <div className=" sticky top-0 z-50 shadow-md ">
             {user && user.displayName && (
                 <div className="bg-purple-700 text-center py-2 text-white">
                     Welcome, {user.displayName}!
                 </div>
             )}
 
-            <nav className="navbar bg-gradient-to-t from-purple-800 to-purple-400 sticky top-0 z-50 shadow-md w-full">
+            <nav className="navbar bg-gradient-to-t from-purple-800 to-purple-400 w-full">
                 <div className="navbar-start flex items-center">
                     {/* Mobile Menu Button */}
                     <div className="dropdown">
