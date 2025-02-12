@@ -48,23 +48,23 @@ const AboutUsPage = () => {
                         <ul className="text-gray-700 space-y-4">
                             <li>
                                 <a
-                                    href="https://hotel-inner-heritage.web.app/"
+                                    href="https://edumanage-f0f88.web.app/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-pink-600 underline hover:bg-pink-300 hover:text-black hover:p-2 hover:rounded-xl"
                                 >
-                                    Hotel Inner Heritage
-                                </a> - A project showcasing the grandeur of heritage hotels.
+                                    EduManage
+                                </a> - A project showcasing the grandeur of Edu-Tech Manage system.
                             </li>
                             <li>
                                 <a
-                                    href="https://multi-visa-navigator.web.app"
+                                    href="https://crowdcube-1249a.web.app/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-indigo-800 underline hover:bg-indigo-400 hover:text-black hover:p-2 hover:rounded-xl"
                                 >
-                                    Multi-Visa Navigator
-                                </a> - A visa management platform for travelers.
+                                    Crowdcube
+                                </a> - Empowering Fundraising with Crowdcube: A Dynamic Crowdfunding Platform.
                             </li>
                         </ul>
                     </div>

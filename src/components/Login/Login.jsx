@@ -8,6 +8,7 @@ import logImage from '../../assets/login.png';
 const Login = () => {
     const { signInUser, signInWithGoogle } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+    const [email, setEmail] = useState("");
     const navigate = useNavigate();
 
     const handleGoogleSignIn = async () => {
@@ -81,7 +82,7 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text text-black font-bold">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="Enter your email" className="input input-bordered w-full bg-gradient-to-r from-purple-700 to-pink-500" required />
+                            <input type="email" name="email" placeholder="Enter your email" className="input input-bordered w-full bg-gradient-to-r from-purple-700 to-pink-500" required onChange={(e) => setEmail(e.target.value)} />
                         </div>
 
                         {/* Password Field */}
@@ -95,6 +96,11 @@ const Login = () => {
                                     {showPassword ? "🙈" : "👁️"}
                                 </button>
                             </div>
+                            <label className="label">
+                                <Link to={`/forgot-password?email=${email}`} className="label-text-alt link link-hover text-black">
+                                    Forgot password?
+                                </Link>
+                            </label>
                         </div>
 
                         {/* Login Button */}

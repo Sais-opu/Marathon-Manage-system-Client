@@ -29,6 +29,12 @@ const Navbar = () => {
                     Marathons
                 </NavLink>
             </li>
+            <li>
+                <NavLink to="/AboutUsPage"
+                    className={({ isActive }) => isActive ? "bg-purple-600 text-white px-4 py-2 rounded border-2 underline" : "hover:shadow-2xl  hover:bg-indigo-500 hover:underline"}>
+                    About Us
+                </NavLink>
+            </li>
 
             {/* Conditional Links for Logged-in Users */}
             {user && user.displayName && (
@@ -39,12 +45,7 @@ const Navbar = () => {
                             Dashboard
                         </NavLink>
                     </li> */}
-                    <li>
-                        <NavLink to="/AboutUsPage"
-                            className={({ isActive }) => isActive ? "bg-purple-600 text-white px-4 py-2 rounded border-2 underline" : "hover:shadow-2xl  hover:bg-indigo-500 hover:underline"}>
-                            About Us
-                        </NavLink>
-                    </li>
+
                     <li>
                         <NavLink to="/dashboard/addmarathon"
                             className={({ isActive }) => isActive ? "bg-purple-600 text-white px-4 py-2 rounded border-2 border-2" : "hover:shadow-2xl  hover:bg-indigo-500 hover:underline"}>

@@ -138,11 +138,12 @@ const MarathonList = () => {
     };
 
     return (
-        <div className="flex min-h-screen bg-gradient-to-t from-purple-700 via-pink-400 to-indigo-800">
+        <div className="flex min-h-screen ">
             <div className="p-6 w-full max-w-7xl mx-auto">
-                <h2 className="text-2xl font-bold mb-4 text-white">Total Marathon Count: {list.length}</h2>
                 <div className="overflow-x-auto shadow-lg bg-gradient-to-b from-purple-700 via-pink-400 to-indigo-800">
+                <h2 className="text-2xl font-bold mb-4 text-white">Total Marathon Count: {list.length}</h2>
                     <table className="table w-full table-auto bg-purple-600 rounded-md shadow-md">
+                    
                         <thead>
                             <tr>
                                 <th className="p-3 text-left text-sm font-semibold text-gray-700">#</th>
@@ -153,7 +154,7 @@ const MarathonList = () => {
                         </thead>
                         <tbody>
                             {list.map((item, index) => (
-                                <tr key={item._id} className="hover:bg-purple-900">
+                                <tr key={item._id} className="hover:bg-purple-900 border-white">
                                     <th className="p-3 text-sm font-medium text-white">{index + 1}</th>
                                     <td className="p-3 text-sm text-white">{item.Title}</td>
                                     <td className="p-3 text-sm text-white">{item.EndRegistrationDate || "N/A"}</td>

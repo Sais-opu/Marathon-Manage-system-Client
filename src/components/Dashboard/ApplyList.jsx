@@ -127,11 +127,11 @@ const ApplyList = () => {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gradient-to-t from-purple-700 via-pink-400 to-indigo-800 px-4">
-            <div className="bg-purple-600 text-white md:w-2/3 w-full p-10 rounded-lg shadow-2xl">
+        <div className="flex justify-center items-center min-h-screen  px-4">
+            <div className="bg-purple-600 text-white md:w-2/3 w-full p-24 rounded-lg shadow-2xl">
                 <h2 className="text-2xl font-bold mb-4">My Apply List: {list.length}</h2>
                 <div className="overflow-x-auto">
-                    <table className="table w-full">
+                    <table className="table w-full ">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -143,7 +143,7 @@ const ApplyList = () => {
                         </thead>
                         <tbody>
                             {list.map((item, index) => (
-                                <tr key={item._id} className="hover:bg-purple-900">
+                                <tr key={item._id} className="hover:bg-purple-900 border-white">
                                     <th>{index + 1}</th>
                                     <td>{item.Title}</td>
                                     <td>{item.MarathonStartDate}</td>

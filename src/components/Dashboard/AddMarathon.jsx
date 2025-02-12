@@ -33,8 +33,8 @@ const AddMarathon = () => {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gradient-to-t from-purple-700 via-pink-400 to-indigo-800 px-4">
-            <div className="bg-purple-600 text-white md:w-2/3 w-full p-10 rounded-lg shadow-2xl">
+        <div className="flex justify-center items-center min-h-screen px-4 py-4">
+            <div className="bg-gradient-to-t from-purple-700 via-pink-400 to-indigo-800  text-white md:w-2/3 w-full p-10 rounded-lg shadow-2xl">
                 <h2 className="text-center font-extrabold text-4xl mb-8">Add New Marathon</h2>
                 <form onSubmit={handleAddMarathon} className="space-y-6">
                     {/* Marathon Title */}

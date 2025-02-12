@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
 
 const Error = () => {
-    
     return (
-        <div className="card card-compact w-96 bg-base-100 shadow-xl justify-center">
-            <figure><img src="https://i.ibb.co.com/84WsB7w/1-10.png" alt="Shoes" /></figure>
-            
-            
+        <div
+            className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center px-4 md:px-8 lg:px-16 text-center w-full"
+            style={{ backgroundImage: `url('https://i.ibb.co/7dZ6DsF5/eeerr.png')` }}
+        >
+            <Link to="/" className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-blue-700 transition">
+                Back to Home
+            </Link>
         </div>
     );
 };
