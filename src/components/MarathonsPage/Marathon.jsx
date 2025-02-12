@@ -27,43 +27,43 @@ const Marathon = () => {
     }
 
     return (
-        <div className="">
+        <div className="py-6">
             <h1 className="text-4xl font-bold text-center py-6">All Marathons</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4">
                 {marathons.map((marathon) => (
                     <div
                         key={marathon._id}
-                        className="card card-compact bg-gradient-to-r from-indigo-800 to-purple-600 w-96 shadow-xl border p-4 "
+                        className="card bg-gradient-to-r from-indigo-800 to-purple-600 shadow-xl border p-4 w-full h-full"
                     >
                         <img
-                            className="overflow-hidden object-cover border rounded-lg h-48"
+                            className="overflow-hidden object-cover border rounded-lg h-48 w-full"
                             src={marathon.MarathonImage} 
                             alt={`Image of ${marathon.Title}`}
                         />
                         <div className="card-body">
-                            <h2 className="card-title text-2xl font-bold">{marathon.Title}</h2>
-                            <p>{marathon.Description}</p>
-                            <p>
+                            <h2 className="card-title text-2xl font-bold text-white">{marathon.Title}</h2>
+                            <p className="text-white">{marathon.Description}</p>
+                            <p className="text-white">
                                 <strong>Location:</strong> {marathon.Location}
                             </p>
-                            <p>
+                            <p className="text-white">
                                 <strong>Registration Start:</strong>{" "}
                                 {new Date(marathon.StartRegistrationDate).toLocaleDateString()}
                             </p>
-                            <p>
+                            <p className="text-white">
                                 <strong>Registration End:</strong>{" "}
                                 {new Date(marathon.EndRegistrationDate).toLocaleDateString()}
                             </p>
-                            <p>
+                            <p className="text-white">
                                 <strong>Marathon Start:</strong>{" "}
                                 {new Date(marathon.MarathonStartDate).toLocaleDateString()}
                             </p>
-                            <p>
+                            <p className="text-white">
                                 <strong>Running Distance:</strong> {marathon.RunningDistance}
                             </p>
                             <div className="card-actions">
                                 <Link to={`/marathon/${marathon._id}`}>
-                                    <button className="btn bg-purple-600 text-white">See Details</button>
+                                    <button className="btn bg-purple-600 text-white mt-4">See Details</button>
                                 </Link>
                             </div>
                         </div>
