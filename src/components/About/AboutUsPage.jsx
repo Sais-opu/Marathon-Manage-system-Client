@@ -23,7 +23,7 @@ const AboutUsPage = () => {
                 <div className="p-8 space-y-8">
                     {/* About Me Section */}
                     <div className="bg-white p-6 rounded-lg shadow-2xl hover:shadow-xl transition border-black">
-                        <h2 className="text-2xl font-semibold mb-4 text-purple-700">About Me</h2>
+                        <h2 className="text-2xl font-semibold mb-4 text-purple-700">About Us</h2>
                         <p className="text-gray-700 leading-relaxed">
                             I’m Md Saidul Islam Apu, a passionate web developer and university student
                             committed to crafting impactful digital experiences. As the founder of
