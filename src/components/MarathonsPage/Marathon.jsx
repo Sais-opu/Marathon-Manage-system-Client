@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 
 const Marathon = () => {
     const [marathons, setMarathons] = useState([]);
-    const [loading, setLoading] = useState(true); // Add loading state
+    const [loading, setLoading] = useState(true); 
     
     useEffect(() => {
         fetch('https://marathon-manage-system-server.vercel.app/marathon')
             .then((res) => res.json())
             .then((data) => {
                 setMarathons(data);
-                setLoading(false); // Set loading to false once data is fetched
+                setLoading(false); 
             })
             .catch((err) => {
                 console.error("Failed to fetch marathon data:", err);
-                setLoading(false); // Set loading to false even if there's an error
+                setLoading(false); 
             });
     }, []);
 

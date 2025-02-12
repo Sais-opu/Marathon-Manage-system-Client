@@ -13,7 +13,8 @@ const customStyles = {
         bottom: "auto",
         marginRight: "-50%",
         transform: "translate(-50%, -50%)",
-        width: "400px",
+        width: "90%",
+        maxWidth: "600px",
         padding: "20px",
         borderRadius: "10px",
         backgroundColor: "#6B46C1", // Adjusted to match the theme (purple)
@@ -31,11 +32,9 @@ const ApplyList = () => {
 
     // Fetch applications
     useEffect(() => {
-        console.log(user.email);
         fetch(`https://marathon-manage-system-server.vercel.app/job-applylist?email=${user.email}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log("Data received:", data); // Log data here
                 setList(data);
             })
             .catch((err) => console.error("Failed to fetch applications:", err));
@@ -89,7 +88,6 @@ const ApplyList = () => {
                 closeUpdateModal();
             })
             .catch((err) => {
-                console.error("Failed to update application:", err);
                 toast.error("Failed to update application. Please try again.", {
                     position: "top-center",
                     autoClose: 3000,
@@ -116,7 +114,6 @@ const ApplyList = () => {
                 closeDeleteModal();
             })
             .catch((err) => {
-                console.error("Failed to delete application:", err);
                 toast.error("Failed to delete application. Please try again.", {
                     position: "top-center",
                     autoClose: 3000,
@@ -127,11 +124,11 @@ const ApplyList = () => {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen  px-4">
-            <div className="bg-purple-600 text-white md:w-2/3 w-full p-24 rounded-lg shadow-2xl">
+        <div className="flex justify-center items-center min-h-screen px-4 overflow-x-hidden">
+            <div className="bg-purple-600 text-white w-full max-w-4xl p-6 rounded-lg shadow-2xl">
                 <h2 className="text-2xl font-bold mb-4">My Apply List: {list.length}</h2>
                 <div className="overflow-x-auto">
-                    <table className="table w-full ">
+                    <table className="table w-full">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -148,16 +145,16 @@ const ApplyList = () => {
                                     <td>{item.Title}</td>
                                     <td>{item.MarathonStartDate}</td>
                                     <td>{item.status || "Pending"}</td>
-                                    <td>
+                                    <td className="flex flex-wrap gap-2 justify-center">
                                         <button
                                             onClick={() => openUpdateModal(item)}
-                                            className="btn btn-sm btn-primary mr-2"
+                                            className="btn btn-sm btn-primary w-full sm:w-auto"
                                         >
                                             Update
                                         </button>
                                         <button
                                             onClick={() => openDeleteModal(item._id)}
-                                            className="btn btn-sm btn-error"
+                                            className="btn btn-sm btn-error w-full sm:w-auto"
                                         >
                                             Delete
                                         </button>

@@ -12,16 +12,29 @@ const Home = () => {
             <Marathons></Marathons>
             <Upcoming></Upcoming>
             {/* Youtube */}
-            <div className=" bg-gradient-to-b from-purple-700 to-indigo-600 my-5 rounded-xl min-h-screen flex flex-col items-center justify-center">
-                <h1 className="text-center text-6xl  mb-6">Long-Term Health Benefits of Running a Marathon</h1>
-                <div className='my-2'>
-                    <p >Running a marathon offers numerous long-term health benefits that extend far beyond the race itself. Regular marathon training improves cardiovascular health by strengthening the heart, enhancing circulation, and reducing the risk of heart disease. It boosts lung capacity, improves overall respiratory efficiency, and helps maintain a healthy weight by burning calories and building lean muscle. The consistent physical exertion also supports mental health by reducing stress, boosting mood through endorphin release, and providing a natural outlet for anxiety and depression. Marathon training fosters mental toughness and self-confidence, and crossing the finish line creates a lasting sense of accomplishment. Over time, running improves bone density, joint health, and reduces the risk of osteoporosis, while also delaying the onset of chronic conditions like diabetes, hypertension, and certain cancers by regulating blood sugar and improving metabolic function. Additionally, marathon running encourages healthy habits, such as focusing on nutrition, hydration, and rest, creating a balanced lifestyle that promotes sustained wellness. It can also foster a sense of community and support through group training and race participation, enhancing motivation and consistency. Ultimately, the long-term health benefits of running a marathon contribute to better physical and mental well-being, improved quality of life, and a sense of accomplishment that lasts for years.</p>
-                </div>
-                <div className=" p-10 flex justify-center hover:animate-pulse">
+            <div className="bg-gradient-to-b from-purple-700 to-indigo-600 my-5 rounded-xl min-h-screen flex flex-col items-center justify-center px-4">
+                <h1 className="text-center text-3xl md:text-4xl lg:text-6xl mb-6">Long-Term Health Benefits of Running a Marathon</h1>
 
-                    <iframe width="914" height="514" src="https://www.youtube.com/embed/Tbd10JwbQOc" title="Are There Long-Term Health Benefits To Running A Marathon?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div className="my-2">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white">
+                        Running a marathon offers numerous long-term health benefits that extend far beyond the race itself. Regular marathon training improves cardiovascular health by strengthening the heart, enhancing circulation, and reducing the risk of heart disease. It boosts lung capacity, improves overall respiratory efficiency, and helps maintain a healthy weight by burning calories and building lean muscle. The consistent physical exertion also supports mental health by reducing stress, boosting mood through endorphin release, and providing a natural outlet for anxiety and depression. Marathon training fosters mental toughness and self-confidence, and crossing the finish line creates a lasting sense of accomplishment. Over time, running improves bone density, joint health, and reduces the risk of osteoporosis, while also delaying the onset of chronic conditions like diabetes, hypertension, and certain cancers by regulating blood sugar and improving metabolic function. Additionally, marathon running encourages healthy habits, such as focusing on nutrition, hydration, and rest, creating a balanced lifestyle that promotes sustained wellness. It can also foster a sense of community and support through group training and race participation, enhancing motivation and consistency. Ultimately, the long-term health benefits of running a marathon contribute to better physical and mental well-being, improved quality of life, and a sense of accomplishment that lasts for years.
+                    </p>
+                </div>
+
+                <div className="p-4 md:p-10 flex justify-center hover:animate-pulse">
+                    <iframe
+                        className="w-full max-w-3xl"
+                        height="auto"
+                        src="https://www.youtube.com/embed/Tbd10JwbQOc"
+                        title="Are There Long-Term Health Benefits To Running A Marathon?"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
                 </div>
             </div>
+
             {/* how it help you */}
             <h1 className="text-center text-6xl py-10 font-bold">How to imporve you life style</h1>
             <div>

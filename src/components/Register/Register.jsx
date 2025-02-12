@@ -193,7 +193,7 @@ const Register = () => {
                         <hr />
                         <button
                             onClick={handleGoogleSignIn}
-                            className="btn mt-5 btn-ghost btn-outline w-full bg-purple-900 flex items-center justify-center space-x-2"
+                            className="btn mt-5 btn-ghost btn-outline w-full bg-purple-900 flex items-center justify-center space-x-2 animate-bounce"
                         >
                             <FcGoogle className="text-2xl" />
                             <span>Login with Google</span>

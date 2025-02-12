@@ -4,12 +4,17 @@ import { AuthContext } from "../Provider/authProvider";
 import { Bounce, toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc"; // Google Icon
 import logImage from '../../assets/login.png';
+import { useRef } from "react";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../../../firebase.init";
+
 
 const Login = () => {
     const { signInUser, signInWithGoogle } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
+    const emailref=useRef()
 
     const handleGoogleSignIn = async () => {
         try {
@@ -65,6 +70,21 @@ const Login = () => {
         }
     };
 
+    // forget password
+    const handleForgetPassword=()=>{
+        console.log('get me email address')
+        const email =emailref.current.value;
+        if(!email){
+            alert('Please give valid email address')
+        }
+        else{
+            sendPasswordResetEmail(auth,email)
+            .then(() =>{
+                alert("Password Reset email sent, Please check your email")
+            })
+        }
+    }
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-base-200 p-5">
             <div className="flex flex-col md:flex-row items-center gap-10 w-full max-w-4xl bg-white shadow-lg rounded-lg p-6">
@@ -82,7 +102,7 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text text-black font-bold">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="Enter your email" className="input input-bordered w-full bg-gradient-to-r from-purple-700 to-pink-500" required onChange={(e) => setEmail(e.target.value)} />
+                            <input ref={emailref} type="email" name="email" placeholder="Enter your email" className="input input-bordered w-full bg-gradient-to-r from-purple-700 to-pink-500" required onChange={(e) => setEmail(e.target.value)} />
                         </div>
 
                         {/* Password Field */}
@@ -97,9 +117,9 @@ const Login = () => {
                                 </button>
                             </div>
                             <label className="label">
-                                <Link to={`/forgot-password?email=${email}`} className="label-text-alt link link-hover text-black">
+                                <label onClick={handleForgetPassword} className="label-text-alt link link-hover text-black">
                                     Forgot password?
-                                </Link>
+                                </label>
                             </label>
                         </div>
 
@@ -109,7 +129,7 @@ const Login = () => {
                         </div>
 
                         {/* Google Sign-In */}
-                        <div className="mt-3 text-center">
+                        <div className="mt-3 text-center animate-bounce">
                             <hr />
                             <button type="button" onClick={handleGoogleSignIn} className="btn mt-5 btn-ghost border-black  hover:bg-purple-700 hover:shadow-2xl bg-purple-700 hover:animate-pulse btn-outline w-full flex items-center justify-center space-x-2">
                                 <FcGoogle className="text-2xl" />
